@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shakti Group — Corporate Brochure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rust:#A6501F;
+  --rust-deep:#6E3916;
+  --ink:#231A14;
+  --body:#584C43;
+  --muted:#8A7D73;
+  --cream:#FBF9F6;
+  --line:#E4DCD2;
+  --line-soft:#F0EAE2;
+}
+
+@page{ size:A4; margin:0; }
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+html,body{
+  background:#8f8b86;
+  font-family:'Figtree',-apple-system,'Segoe UI',Roboto,sans-serif;
+  color:var(--body);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+.page{
+  width:210mm; height:297mm;
+  margin:0 auto;
+  background:var(--cream);
+  position:relative;
+  overflow:hidden;
+  display:flex; flex-direction:column;
+  padding:10mm 13mm 0;
+}
+
+/* faint corner flourish, echoes the brand mark's swirl */
+.page::after{
+  content:"";
+  position:absolute; right:-62mm; bottom:-74mm;
+  width:130mm; height:130mm; border-radius:50%;
+  border:1px solid rgba(166,80,31,.10);
+  box-shadow:0 0 0 16mm rgba(166,80,31,.02);
+  pointer-events:none;
+}
+
+.serif{font-family:'Playfair Display',Georgia,serif;}
+
+/* ---------- header ---------- */
+header{
+  display:flex; align-items:flex-end; justify-content:space-between;
+  padding-bottom:4.5mm; border-bottom:1px solid var(--line);
+}
+/* the logo asset carries the mark + SHAKTI only — GROUP is typeset to complete the lockup */
+.lockup{display:flex; flex-direction:column; align-items:center; gap:1.8mm;}
+.lockup img{height:13mm; width:auto; display:block;}
+.lockup-sub{
+  display:flex; align-items:center; gap:2.4mm;
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:8pt; letter-spacing:.44em; text-indent:.44em;
+  text-transform:uppercase; color:var(--rust-deep);
+}
+.lockup-sub i{width:6.5mm; height:1px; background:rgba(110,57,22,.42); display:block;}
+.lockup.sm img{height:9mm;}
+.lockup.sm .lockup-sub{font-size:5.6pt;}
+.lockup.sm .lockup-sub i{width:4.5mm;}
+.tagline{
+  text-align:right; font-size:7.4pt; line-height:1.55;
+  color:var(--rust); font-weight:600; letter-spacing:.02em;
+}
+
+/* ---------- hero ---------- */
+.hero{
+  display:grid; grid-template-columns:1fr 74mm; gap:9mm;
+  padding:7mm 0 6.5mm;
+  align-items:center;
+}
+.eyebrow{
+  display:flex; align-items:center; gap:2.6mm;
+  font-size:6.8pt; font-weight:700; letter-spacing:.24em;
+  text-transform:uppercase; color:var(--muted); margin-bottom:4mm;
+}
+.eyebrow::before{content:"";width:9mm;height:1px;background:var(--rust);}
+
+h1{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:31pt; line-height:1.08; font-weight:400;
+  color:var(--ink); letter-spacing:-.01em;
+}
+h1 em{font-style:italic; color:var(--rust);}
+
+.rule{width:16mm;height:2px;background:var(--rust);margin:5mm 0;}
+
+.lede{font-size:9.6pt; line-height:1.62; color:var(--body); max-width:88mm;}
+.about{
+  font-size:8.2pt; line-height:1.66; color:var(--muted);
+  margin-top:4.5mm; max-width:88mm;
+}
+
+.hero-figure{
+  position:relative; height:78mm;
+  border-radius:2mm 26mm 2mm 2mm;
+  overflow:hidden;
+  box-shadow:0 2mm 7mm rgba(35,26,20,.14);
+}
+.hero-figure img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-figure figcaption{
+  position:absolute; left:0; right:0; bottom:0;
+  padding:6mm 5mm 3.4mm;
+  background:linear-gradient(to top,rgba(28,20,15,.82),rgba(28,20,15,0));
+  color:#fff; font-size:6.6pt; letter-spacing:.18em;
+  text-transform:uppercase; font-weight:600;
+}
+
+/* ---------- section headings ---------- */
+.sec-head{
+  display:flex; align-items:center; gap:4mm;
+  margin-bottom:5mm;
+}
+.sec-head h2{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:12pt; font-weight:500; color:var(--rust);
+  letter-spacing:.12em; text-transform:uppercase; white-space:nowrap;
+}
+.sec-head::after{content:"";flex:1;height:1px;background:var(--line);}
+
+/* ---------- approach ---------- */
+.approach{padding-bottom:6mm;}
+.approach-grid{
+  display:grid; grid-template-columns:repeat(4,1fr);
+}
+.approach-item{padding:0 5mm; text-align:center; border-left:1px solid var(--line-soft);}
+.approach-item:first-child{border-left:0; padding-left:0;}
+.approach-item:last-child{padding-right:0;}
+.approach-item svg{width:9mm;height:9mm;margin-bottom:3mm;}
+.approach-item h3{
+  font-size:7.6pt; font-weight:700; color:var(--ink);
+  text-transform:uppercase; letter-spacing:.09em; margin-bottom:2mm;
+}
+.approach-item p{font-size:7.4pt; line-height:1.55; color:var(--muted);}
+
+/* ---------- businesses ---------- */
+.businesses{padding-bottom:6mm;}
+.biz-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:5mm;}
+.biz{
+  background:#fff; border:1px solid var(--line-soft);
+  border-radius:1.6mm; overflow:hidden;
+  display:flex; flex-direction:column;
+  box-shadow:0 .6mm 2.4mm rgba(35,26,20,.05);
+}
+.biz-shot{position:relative; height:20mm; background:#EFE9E1;}
+.biz-shot img{width:100%;height:100%;object-fit:cover;display:block;}
+.biz-shot .badge{
+  position:absolute; top:1.6mm; left:1.6mm;
+  background:rgba(255,255,255,.92); color:var(--rust);
+  font-size:5.6pt; font-weight:700; letter-spacing:.12em;
+  padding:.5mm 1.4mm; border-radius:.6mm;
+}
+.biz-body{padding:3.4mm 3.4mm 4mm; flex:1;}
+.biz-top{display:flex; align-items:center; gap:2.6mm; margin-bottom:2.6mm;}
+.biz-top svg{width:6.4mm;height:6.4mm;flex:none;}
+.biz-top h3{
+  font-size:8.4pt; font-weight:700; color:var(--ink);
+  text-transform:uppercase; letter-spacing:.05em; line-height:1.2;
+}
+.biz-body p{font-size:7.6pt; line-height:1.55; color:var(--muted);}
+
+/* ---------- impact ---------- */
+.impact{
+  display:grid; grid-template-columns:repeat(4,1fr);
+  background:var(--rust-deep); color:#fff;
+  border-radius:1.6mm; padding:5mm 4mm; margin-bottom:5mm;
+}
+.impact div{text-align:center; border-left:1px solid rgba(255,255,255,.16);}
+.impact div:first-child{border-left:0;}
+.impact .n{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:17pt; line-height:1; margin-bottom:1.6mm; display:block;
+}
+.impact .l{
+  font-size:6.5pt; letter-spacing:.15em; text-transform:uppercase;
+  color:rgba(255,255,255,.72);
+}
+
+/* ---------- footer ---------- */
+footer{
+  margin-top:auto;
+  border-top:1px solid var(--line);
+  padding:4.5mm 0 9mm;
+}
+.cta{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:13pt; color:var(--rust); margin-bottom:3.5mm;
+}
+.foot-row{display:flex; align-items:center; justify-content:space-between; gap:6mm;}
+.contacts{display:flex; gap:9mm;}
+.contact{display:flex; align-items:center; gap:2.4mm;}
+.contact svg{width:5mm;height:5mm;flex:none;}
+.contact .k{
+  font-size:6.2pt; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--muted); display:block; margin-bottom:.5mm;
+}
+.contact .v{font-size:8pt; color:var(--ink); font-weight:600;}
+
+@media print{
+  html,body{background:#fff;}
+  .page{margin:0;}
+  *{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="lockup">
+      <img src="../Logos/shakti_logo_transparent.png" alt="Shakti Group">
+      <div class="lockup-sub"><i></i>Group<i></i></div>
+    </div>
+    <div class="tagline">Rooted in India.<br>Focused on Impact.<br>Built for the World.</div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow">About Shakti Group</div>
+      <h1>One source,<br><em>many</em> possibilities.</h1>
+      <div class="rule"></div>
+      <p class="lede">A multi-industry ecosystem building businesses that create lasting impact and shape the future.</p>
+      <p class="about">Shakti Group is headquartered in Vadodara, India. We build and scale businesses across diverse sectors, combining deep domain expertise, strong networks and long-term thinking to create meaningful impact and lasting value.</p>
+    </div>
+    <figure class="hero-figure">
+      <img src="../../Website/screens/hero.png" alt="Shakti Group headquarters, Vadodara">
+      <figcaption>Vadodara, Gujarat, India</figcaption>
+    </figure>
+  </section>
+
+  <section class="approach">
+    <div class="sec-head"><h2>Our Approach</h2></div>
+    <div class="approach-grid">
+
+      <div class="approach-item">
+        <svg viewBox="0 0 32 32" fill="none" stroke="#A6501F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 3 5 7.5v8.2C5 22.4 9.6 27.4 16 29c6.4-1.6 11-6.6 11-13.3V7.5L16 3Z"/>
+          <path d="m11.2 15.8 3.3 3.4 6.3-6.6"/>
+        </svg>
+        <h3>Rooted Strength</h3>
+        <p>A strong foundation built on trust, quality and integrity.</p>
+      </div>
+
+      <div class="approach-item">
+        <svg viewBox="0 0 32 32" fill="none" stroke="#A6501F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="16" cy="16" r="3.2"/>
+          <circle cx="16" cy="5.4" r="2.7"/><circle cx="25.2" cy="21.4" r="2.7"/><circle cx="6.8" cy="21.4" r="2.7"/>
+          <path d="M16 8.1v4.7M18.8 17.6l4 2.4M13.2 17.6l-4 2.4"/>
+        </svg>
+        <h3>Convergent Energy</h3>
+        <p>Independent businesses powered by one shared ecosystem.</p>
+      </div>
+
+      <div class="approach-item">
+        <svg viewBox="0 0 32 32" fill="none" stroke="#A6501F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 27h24"/>
+          <path d="M8 27v-6.5M14 27v-11M20 27v-7.5"/>
+          <path d="m17 12 5.6-5.6M26.4 5.2l.6 5.4M26.4 5.2 21 5.8" />
+        </svg>
+        <h3>Purposeful Growth</h3>
+        <p>Expanding with purpose, discipline and long-term value.</p>
+      </div>
+
+      <div class="approach-item">
+        <svg viewBox="0 0 32 32" fill="none" stroke="#A6501F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12.5" cy="12" r="3.6"/>
+          <path d="M5.5 24.5c0-3.9 3.1-6.6 7-6.6s7 2.7 7 6.6"/>
+          <path d="M21.5 9.2a3.4 3.4 0 0 1 0 6.6M23 18.6c2.6.7 4.5 2.9 4.5 5.9"/>
+        </svg>
+        <h3>Quiet Confidence</h3>
+        <p>Substance first, impact always.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="businesses">
+    <div class="sec-head"><h2>Our Businesses</h2></div>
+    <div class="biz-grid">
+
+      <article class="biz">
+        <div class="biz-shot"><img src="../../Website/screens/finecircuits.png" alt="Fine Circuits"><span class="badge">01</span></div>
+        <div class="biz-body">
+          <div class="biz-top">
+            <svg viewBox="0 0 32 32" fill="none" stroke="#A6501F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="14" height="14" rx="1.5"/><rect x="13.5" y="13.5" width="5" height="5" rx=".8"/>
+              <path d="M13 9V5.5M19 9V5.5M13 26.5V23M19 26.5V23M9 13H5.5M9 19H5.5M26.5 13H23M26.5 19H23"/>
+            </svg>
+            <h3>Fine Circuits</h3>
+          </div>
+          <p>Delivering precision engineered PCBs that power tomorrow's electronics.</p>
+        </div>
+      </article>
+
+      <article class="biz">
+        <div class="biz-shot"><img src="../../Website/screens/sports.png" alt="Shakti Sports"><span class="badge">02</span></div>
+        <div class="biz-body">
+          <div class="biz-top">
+            <svg viewBox="0 0 32 32" fill="none" stroke="#A6501F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="19.5" cy="6" r="2.6"/>
+              <path d="m9 28 4.6-6.4 3.3-2.6-1.6-5.6-4.6 3.2L8 21"/>
+              <path d="m16.9 19 4.6 3.4L24 28M15.3 13.4l4.5-2.4 4.4 3.2 3.3-.6"/>
+            </svg>
+            <h3>Shakti Sports</h3>
+          </div>
+          <p>Building champions and promoting fitness, discipline and sportsmanship.</p>
+        </div>
+      </article>
+
+      <article class="biz">
+        <div class="biz-shot"><img src="../../Website/screens/aitechlabs.png" alt="Shakti AI Tech Labs"><span class="badge">03</span></div>
+        <div class="biz-body">
+          <div class="biz-top">
+            <svg viewBox="0 0 32 32" fill="none" stroke="#A6501F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 3.5 27 10v12L16 28.5 5 22V10l11-6.5Z"/>
+              <path d="M5 10l11 6.5L27 10M16 16.5v12"/>
+            </svg>
+            <h3>Shakti AI Tech Labs</h3>
+          </div>
+          <p>Incubating ideas, building ventures and delivering AI-powered solutions.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="impact">
+    <div><span class="n">12+</span><span class="l">Years of Building</span></div>
+    <div><span class="n">3</span><span class="l">Active Businesses</span></div>
+    <div><span class="n">100+</span><span class="l">Projects Delivered</span></div>
+    <div><span class="n">Global</span><span class="l">Reach &amp; Vision</span></div>
+  </section>
+
+  <footer>
+    <div class="cta">Let's build the future, together.</div>
+    <div class="foot-row">
+      <div class="contacts">
+
+        <div class="contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#A6501F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>
+          </svg>
+          <div><span class="k">Email</span><span class="v">contactus@shakti.one</span></div>
+        </div>
+
+        <div class="contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#A6501F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.7 4 6 4 9.5s-1.4 6.8-4 9.5c-2.6-2.7-4-6-4-9.5s1.4-6.8 4-9.5Z"/>
+          </svg>
+          <div><span class="k">Website</span><span class="v">shakti.one</span></div>
+        </div>
+
+        <div class="contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#A6501F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s7.5-6.4 7.5-12a7.5 7.5 0 0 0-15 0C4.5 15.6 12 22 12 22Z"/><circle cx="12" cy="10" r="2.8"/>
+          </svg>
+          <div><span class="k">Location</span><span class="v">Vadodara, Gujarat, India</span></div>
+        </div>
+
+      </div>
+      <div class="lockup sm">
+        <img src="../Logos/shakti_logo_transparent.png" alt="Shakti Group">
+        <div class="lockup-sub"><i></i>Group<i></i></div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

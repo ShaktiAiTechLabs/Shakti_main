@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ledger — Product Brochure | Shakti AI Tech Labs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rust:#A6501F;
+  --rust-deep:#6E3916;
+  --ink:#231A14;
+  --body:#584C43;
+  --muted:#8A7D73;
+  --cream:#FBF9F6;
+  --line:#E4DCD2;
+  --line-soft:#F0EAE2;
+  --product:#2563EB;   /* Ledger's own UI blue — used only for product-level marks */
+}
+
+@page{ size:A4; margin:0; }
+*{margin:0;padding:0;box-sizing:border-box;}
+
+html,body{
+  background:#8f8b86;
+  font-family:'Figtree',-apple-system,'Segoe UI',Roboto,sans-serif;
+  color:var(--body);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+.page{
+  width:210mm; height:297mm;
+  margin:0 auto;
+  background:var(--cream);
+  position:relative; overflow:hidden;
+  display:flex; flex-direction:column;
+  padding:10mm 13mm 0;
+}
+.page + .page{ margin-top:8mm; }
+
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;}
+.serif{font-family:'Playfair Display',Georgia,serif;}
+
+/* ---------- shared header / footer ---------- */
+.brandbar{
+  display:flex; align-items:flex-end; justify-content:space-between;
+  padding-bottom:4mm; border-bottom:1px solid var(--line);
+}
+.lockup{display:flex; flex-direction:column; align-items:center; gap:1.6mm;}
+.lockup img{height:11mm; width:auto; display:block;}
+.lockup-sub{
+  display:flex; align-items:center; gap:2.2mm;
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:7pt; letter-spacing:.44em; text-indent:.44em;
+  text-transform:uppercase; color:var(--rust-deep);
+}
+.lockup-sub i{width:5.5mm; height:1px; background:rgba(110,57,22,.42); display:block;}
+.lockup.sm img{height:8.5mm;}
+.lockup.sm .lockup-sub{font-size:5.4pt;}
+.lockup.sm .lockup-sub i{width:4mm;}
+
+.unit{
+  text-align:right; font-size:6.8pt; font-weight:700;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--rust);
+  line-height:1.7;
+}
+.unit span{display:block; color:var(--muted); letter-spacing:.16em; font-weight:600;}
+
+.pagefoot{
+  margin-top:auto; border-top:1px solid var(--line);
+  padding:3.6mm 0 7mm;
+  display:flex; align-items:center; justify-content:space-between;
+  font-size:6.6pt; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted); font-weight:600;
+}
+.pagefoot b{color:var(--rust); font-weight:700;}
+
+/* ---------- page 1 ---------- */
+.eyebrow{
+  display:flex; align-items:center; gap:2.6mm;
+  font-size:6.8pt; font-weight:700; letter-spacing:.24em;
+  text-transform:uppercase; color:var(--muted);
+}
+.eyebrow::before{content:"";width:9mm;height:1px;background:var(--rust);}
+
+.intro{ padding:7mm 0 5mm; }
+.wordmark{display:flex; align-items:center; gap:4mm; margin:4mm 0 3mm;}
+.wordmark .glyph{
+  width:13mm; height:13mm; border-radius:3mm;
+  background:var(--product); color:#fff;
+  font-size:17pt; font-weight:700; line-height:13mm; text-align:center;
+  box-shadow:0 1.4mm 4mm rgba(37,99,235,.28);
+}
+.wordmark h1{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:34pt; font-weight:500; color:var(--ink); line-height:1;
+}
+.claim{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:17pt; line-height:1.26; color:var(--ink);
+  max-width:158mm; margin-bottom:4mm;
+}
+.claim em{font-style:italic; color:var(--rust);}
+.lede{font-size:9pt; line-height:1.62; color:var(--body); max-width:158mm;}
+
+.hero-shot{
+  margin:6mm 0 0;
+  border-radius:2mm; overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow:0 2.4mm 8mm rgba(35,26,20,.13);
+  background:#fff;
+}
+.hero-shot img{width:100%; display:block;}
+.shot-cap{
+  font-size:6.4pt; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--muted); font-weight:600; margin-top:2.4mm; text-align:center;
+}
+
+.props{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:5mm;
+  padding:7mm 0 0;
+}
+.prop{border-top:2px solid var(--rust); padding-top:3mm;}
+.prop h3{
+  font-size:8pt; font-weight:700; color:var(--ink);
+  text-transform:uppercase; letter-spacing:.06em; margin-bottom:2mm;
+}
+.prop p{font-size:7.4pt; line-height:1.55; color:var(--muted);}
+
+/* ---------- page 2 ---------- */
+.sec-head{display:flex; align-items:center; gap:4mm; margin:6.5mm 0 4.5mm;}
+.sec-head h2{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:11.5pt; font-weight:500; color:var(--rust);
+  letter-spacing:.12em; text-transform:uppercase; white-space:nowrap;
+}
+.sec-head::after{content:"";flex:1;height:1px;background:var(--line);}
+
+.flow{display:grid; grid-template-columns:repeat(5,1fr); gap:3mm;}
+.step{position:relative; padding-right:2mm;}
+.step .n{
+  width:6.6mm; height:6.6mm; border-radius:50%;
+  background:var(--rust); color:#fff;
+  font-size:7pt; font-weight:700; line-height:6.6mm; text-align:center;
+  margin-bottom:2.4mm;
+}
+.step h4{
+  font-size:7.6pt; font-weight:700; color:var(--ink);
+  text-transform:uppercase; letter-spacing:.06em; margin-bottom:1.6mm;
+}
+.step p{font-size:6.9pt; line-height:1.5; color:var(--muted);}
+.step:not(:last-child)::after{
+  content:"→"; position:absolute; top:0.6mm; right:-1.4mm;
+  color:var(--line); font-size:9pt;
+}
+
+.gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:4.5mm; align-items:start;}
+.frame{
+  border:1px solid var(--line); border-radius:1.6mm; overflow:hidden;
+  background:#fff; box-shadow:0 1mm 3.4mm rgba(35,26,20,.07);
+}
+.frame img{width:100%; display:block;}
+.frame figcaption{
+  font-size:6.2pt; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--muted); font-weight:600;
+  padding:2mm 2.6mm; border-top:1px solid var(--line-soft); background:#fff;
+}
+
+.caps{display:grid; grid-template-columns:repeat(4,1fr); gap:4.5mm;}
+.cap h3{
+  font-size:7.4pt; font-weight:700; color:var(--rust);
+  text-transform:uppercase; letter-spacing:.09em;
+  padding-bottom:2mm; margin-bottom:2.6mm; border-bottom:1px solid var(--line);
+}
+.cap ul{list-style:none;}
+.cap li{
+  font-size:6.9pt; line-height:1.45; color:var(--muted);
+  padding-left:3mm; position:relative; margin-bottom:1.8mm;
+}
+.cap li::before{
+  content:""; position:absolute; left:0; top:1.5mm;
+  width:1.4mm; height:1.4mm; border-radius:50%; background:var(--rust);
+  opacity:.5;
+}
+
+.bench{
+  display:grid; grid-template-columns:repeat(4,1fr);
+  background:var(--rust-deep); color:#fff;
+  border-radius:1.6mm; padding:4.6mm 4mm; margin-top:1mm;
+}
+.bench div{text-align:center; border-left:1px solid rgba(255,255,255,.16);}
+.bench div:first-child{border-left:0;}
+.bench .n{
+  font-family:'JetBrains Mono',monospace;
+  font-size:14pt; line-height:1; margin-bottom:1.6mm; display:block; font-weight:600;
+}
+.bench .l{
+  font-size:6.1pt; letter-spacing:.13em; text-transform:uppercase;
+  color:rgba(255,255,255,.72); display:block;
+}
+
+.stack{
+  margin-top:4.5mm; padding:3.4mm 4mm;
+  border:1px solid var(--line); border-radius:1.6mm; background:#fff;
+}
+.stack .k{
+  font-size:6.2pt; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--rust); font-weight:700; margin-bottom:1.8mm;
+}
+.stack p{
+  font-family:'JetBrains Mono',monospace;
+  font-size:6.8pt; line-height:1.62; color:var(--body);
+}
+
+.contact-strip{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:6mm; margin-top:5mm; padding-top:4.5mm; border-top:1px solid var(--line);
+}
+.contact-strip .cta{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:12pt; color:var(--rust); margin-bottom:2mm;
+}
+.contact-strip .lines{font-size:7.6pt; line-height:1.6; color:var(--ink); font-weight:600;}
+.contact-strip .lines span{color:var(--muted); font-weight:500;}
+
+@media print{
+  html,body{background:#fff;}
+  .page{margin:0;}
+  .page + .page{margin-top:0; page-break-before:always;}
+  *{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 — FRONT ============ -->
+<div class="page">
+
+  <div class="brandbar">
+    <div class="lockup">
+      <img src="../../Brand/Logos/shakti_logo_transparent.png" alt="Shakti Group">
+      <div class="lockup-sub"><i></i>Group<i></i></div>
+    </div>
+    <div class="unit">Shakti AI Tech Labs<span>Venture Studio · Vadodara</span></div>
+  </div>
+
+  <section class="intro">
+    <div class="eyebrow">Accounts Payable Automation</div>
+    <div class="wordmark">
+      <div class="glyph">L</div>
+      <h1>Ledger</h1>
+    </div>
+    <p class="claim">Every invoice read, checked against its purchase order, and given a <em>verdict</em> — with a record of who changed what.</p>
+    <p class="lede">Ledger ingests a vendor invoice, runs OCR, extracts every field with a confidence score, links the purchase order automatically, then scores the match point by point. Finance sees a pass, a review flag, or a rejection — and the reasoning behind it.</p>
+  </section>
+
+  <figure class="hero-shot">
+    <img src="screens/print_detail.jpg" alt="Ledger invoice detail — extracted fields highlighted on the source document beside verified data">
+  </figure>
+  <div class="shot-cap">Invoice review — extracted fields highlighted on the source document, verified values alongside</div>
+
+  <section class="props">
+    <div class="prop">
+      <h3>Reads the document</h3>
+      <p>Text-layer PDFs and scanned images, processed in-house. Every field carries its own confidence score.</p>
+    </div>
+    <div class="prop">
+      <h3>Finds the PO itself</h3>
+      <p>The PO number read off the invoice is looked up and linked automatically — no manual selection.</p>
+    </div>
+    <div class="prop">
+      <h3>Scores the match</h3>
+      <p>Vendor, totals, currency, line items and approval state compared point by point, discrepancies itemised.</p>
+    </div>
+    <div class="prop">
+      <h3>Proves the trail</h3>
+      <p>Every correction logged old value to new, with author and timestamp. Passed invoices lock.</p>
+    </div>
+  </section>
+
+  <div class="pagefoot">
+    <span>Ledger — Accounts Payable Automation</span>
+    <span>A <b>Shakti AI Tech Labs</b> product</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 2 — BACK ============ -->
+<div class="page">
+
+  <div class="brandbar">
+    <div class="unit" style="text-align:left">Ledger<span>Capability Overview</span></div>
+    <div class="lockup sm">
+      <img src="../../Brand/Logos/shakti_logo_transparent.png" alt="Shakti Group">
+      <div class="lockup-sub"><i></i>Group<i></i></div>
+    </div>
+  </div>
+
+  <div class="sec-head"><h2>How it works</h2></div>
+  <div class="flow">
+    <div class="step">
+      <div class="n">1</div>
+      <h4>Upload</h4>
+      <p>Drag in a PDF, JPG or PNG up to 10 MB.</p>
+    </div>
+    <div class="step">
+      <div class="n">2</div>
+      <h4>Extract</h4>
+      <p>OCR reads the document; fields come back scored.</p>
+    </div>
+    <div class="step">
+      <div class="n">3</div>
+      <h4>Review</h4>
+      <p>A person checks values against the original and corrects.</p>
+    </div>
+    <div class="step">
+      <div class="n">4</div>
+      <h4>Match</h4>
+      <p>Point-scored against the linked PO; duplicates caught.</p>
+    </div>
+    <div class="step">
+      <div class="n">5</div>
+      <h4>Verdict</h4>
+      <p>Pass, review or reject — the PO closes on a pass.</p>
+    </div>
+  </div>
+
+  <div class="sec-head"><h2>Inside the product</h2></div>
+  <div class="gallery">
+    <figure class="frame">
+      <img src="screens/print_dashboard.jpg" alt="Ledger dashboard">
+      <figcaption>Dashboard — volume, spend and status breakdown</figcaption>
+    </figure>
+    <figure class="frame">
+      <img src="screens/print_invoices.jpg" alt="Ledger invoice queue">
+      <figcaption>Queue — filter by state and confidence</figcaption>
+    </figure>
+    <figure class="frame">
+      <img src="screens/print_vendor.jpg" alt="Ledger vendor analytics">
+      <figcaption>Vendor — pass rate, risk and discrepancies</figcaption>
+    </figure>
+  </div>
+
+  <div class="sec-head"><h2>Capabilities</h2></div>
+  <div class="caps">
+    <div class="cap">
+      <h3>Processing</h3>
+      <ul>
+        <li>In-process OCR — no external API</li>
+        <li>Per-field confidence scores</li>
+        <li>Inline correction with change history</li>
+        <li>Duplicate detection by file hash</li>
+        <li>Anomaly risk scoring</li>
+      </ul>
+    </div>
+    <div class="cap">
+      <h3>Vendors &amp; POs</h3>
+      <ul>
+        <li>Per-vendor required fields</li>
+        <li>Vendor spend and flag history</li>
+        <li>Server-computed PO totals</li>
+        <li>Line-item similarity matching</li>
+        <li>CSV export honouring filters</li>
+      </ul>
+    </div>
+    <div class="cap">
+      <h3>Access</h3>
+      <ul>
+        <li>Admin, Accountant, Viewer roles</li>
+        <li>Enforced server-side</li>
+        <li>JWT auth, self-serve reset</li>
+        <li>Admin team management</li>
+        <li>Per-invoice action log</li>
+      </ul>
+    </div>
+    <div class="cap">
+      <h3>Operations</h3>
+      <ul>
+        <li>Background queue for OCR</li>
+        <li>Clustered across CPU cores</li>
+        <li>Self-hosted object storage</li>
+        <li>Rate limiting per IP</li>
+        <li>Degrades gracefully at every layer</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sec-head"><h2>Measured</h2></div>
+  <div class="bench">
+    <div><span class="n">5,000</span><span class="l">Invoices benchmarked</span></div>
+    <div><span class="n">&lt;70 ms</span><span class="l">Typical list query</span></div>
+    <div><span class="n">23 ms</span><span class="l">Single invoice fetch</span></div>
+    <div><span class="n">44 ms</span><span class="l">Dashboard stats</span></div>
+  </div>
+
+  <div class="stack">
+    <div class="k">Runs on</div>
+    <p>React · Node.js · Express · MongoDB · Tesseract · BullMQ + Redis · Python FastAPI ML service · Nginx · PM2 — self-hosted, no paid cloud dependency.</p>
+  </div>
+
+  <div class="contact-strip">
+    <div>
+      <div class="cta">Book a walkthrough.</div>
+      <div class="lines">
+        contactus@shakti.one &nbsp;·&nbsp; shakti.one<br>
+        <span>Shakti AI Tech Labs — Vadodara, Gujarat, India</span>
+      </div>
+    </div>
+    <div class="lockup sm">
+      <img src="../../Brand/Logos/shakti_logo_transparent.png" alt="Shakti Group">
+      <div class="lockup-sub"><i></i>Group<i></i></div>
+    </div>
+  </div>
+
+  <div class="pagefoot">
+    <span>Benchmarks measured locally at 5,000 invoices</span>
+    <span>A <b>Shakti AI Tech Labs</b> product</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,611 @@
+<title>Shakti AI TechLabs — Company Deck</title>
+<style>
+  :root{
+    --accent:#00CE9F; --accent-tint:#BFF3E7; --deep:#0B2C24;
+    --cream:#F4F7E9; --page:#FCFCFA; --raised:#FEFFFA;
+    --dark:#242424; --dark-2:#3D3D3D; --ink:#111111;
+    --muted:#616161; --muted-dark:#9AA09E;
+    --hair:rgba(17,17,17,.12); --hair-d:rgba(252,252,250,.16);
+    --display:"Neue Montreal","NeueMontreal",Inter,system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    --body:Inter,system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+  body{
+    margin:0;background:var(--dark);color:var(--ink);
+    font-family:var(--body);font-size:16px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .deck{display:flex;flex-direction:column;gap:14px;padding:14px;max-width:1500px;margin:0 auto;}
+  .slide{
+    position:relative;border-radius:30px;overflow:hidden;
+    padding:clamp(26px,4.4vw,64px);
+    min-height:min(78vh,760px);
+    display:flex;flex-direction:column;justify-content:center;
+    background:var(--page);color:var(--ink);
+  }
+  .slide.cream{background:var(--cream);}
+  .slide.dark{background:var(--dark);color:var(--page);}
+  .slide.green{background:var(--accent);color:var(--ink);}
+  .slide.flush{padding:0;}
+
+  .chrome{
+    position:absolute;top:clamp(18px,2.6vw,30px);
+    left:clamp(26px,4.4vw,64px);right:clamp(26px,4.4vw,64px);
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+    color:var(--muted);z-index:5;
+  }
+  .dark .chrome{color:var(--muted-dark);}
+  .green .chrome{color:#0B4436;}
+  .chrome .n{font-variant-numeric:tabular-nums;}
+
+  .eyebrow{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 18px;display:flex;align-items:center;gap:12px;
+  }
+  .eyebrow::after{content:"";flex:1;height:1px;background:var(--hair);max-width:90px;}
+  .dark .eyebrow{color:var(--accent);}
+  .dark .eyebrow::after{background:var(--hair-d);}
+  .green .eyebrow{color:#0B4436;}
+  .green .eyebrow::after{background:rgba(11,68,54,.3);}
+
+  h1,h2{font-family:var(--display);font-weight:500;letter-spacing:-.04em;line-height:1.02;margin:0;text-wrap:balance;}
+  h1{font-size:clamp(38px,7vw,88px);}
+  h2{font-size:clamp(27px,4.3vw,56px);}
+  .q{color:var(--muted);}
+  .dark .q{color:var(--muted-dark);}
+  .green .q{color:#0B4436;}
+
+  .say{font-size:clamp(15px,1.4vw,19px);color:var(--muted);max-width:48ch;margin:20px 0 0;}
+  .dark .say{color:var(--muted-dark);}
+  .green .say{color:var(--deep);}
+
+  .stack{display:flex;flex-direction:column;gap:clamp(18px,2.6vw,34px);}
+  .split{display:grid;grid-template-columns:1fr;gap:clamp(20px,2.6vw,40px);align-items:center;}
+  @media (min-width:900px){
+    .split{grid-template-columns:1fr 1fr;}
+    .split.l{grid-template-columns:1.05fr .95fr;}
+    .split.r{grid-template-columns:.95fr 1.05fr;}
+  }
+
+  /* ---------- procedural photography ---------- */
+  .photo{position:relative;border-radius:22px;overflow:hidden;background:var(--dark);min-height:clamp(230px,34vw,430px);}
+  .photo.tall{min-height:clamp(300px,46vw,580px);}
+  .photo.full{position:absolute;inset:0;border-radius:0;min-height:0;}
+  .photo canvas{position:absolute;inset:0;width:100%;height:100%;display:block;}
+  .photo .tagp{
+    position:absolute;left:14px;bottom:14px;z-index:2;
+    font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;
+    background:rgba(0,206,159,.92);color:var(--deep);
+    padding:4px 10px;border-radius:999px;font-weight:600;
+  }
+  .scrim{position:absolute;inset:0;z-index:1;
+    background:linear-gradient(100deg,rgba(36,36,36,.95) 0%,rgba(36,36,36,.74) 44%,rgba(36,36,36,.26) 100%);}
+  .scrim.up{background:linear-gradient(to top,rgba(36,36,36,.95) 0%,rgba(36,36,36,.55) 45%,rgba(36,36,36,.15) 100%);}
+  .over{position:relative;z-index:2;}
+
+  /* ---------- diagram frame ---------- */
+  .dgm{width:100%;display:block;overflow:visible;}
+  .dgm text{font-family:var(--mono);}
+  .dgm .lbl{font-size:8.4px;letter-spacing:.16em;text-transform:uppercase;}
+  .dgm .ttl{font-family:var(--display);font-size:13px;letter-spacing:-.02em;font-weight:500;}
+  .dgm .sml{font-size:7.4px;letter-spacing:.1em;text-transform:uppercase;}
+  .dgm-wrap{overflow-x:auto;}
+
+  /* ---------- before / after ---------- */
+  .ba{display:grid;grid-template-columns:1fr;gap:12px;}
+  @media (min-width:820px){.ba{grid-template-columns:1fr 1fr;}}
+  .ba > div{border-radius:24px;padding:clamp(22px,2.5vw,32px);display:flex;flex-direction:column;gap:18px;}
+  .ba .bf{background:var(--cream);}
+  .ba .af{background:var(--accent);}
+  .ba .tg{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;}
+  .ba .bf .tg{color:#8C8D86;} .ba .af .tg{color:#0B4436;}
+  .ba h3{font-family:var(--display);font-weight:500;letter-spacing:-.032em;line-height:1.08;font-size:clamp(20px,2.5vw,30px);margin:0;}
+  .ba .bf h3{color:#8C8D86;} .ba .af h3{color:var(--ink);}
+  .ba ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;}
+  .ba li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;line-height:1.4;}
+  .ba .bf li{color:var(--muted);} .ba .af li{color:var(--deep);}
+  .ba .m{flex:none;width:19px;height:19px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700;margin-top:1px;}
+  .ba .bf .m{background:#8C8D86;color:var(--cream);}
+  .ba .af .m{background:var(--ink);color:var(--accent);}
+
+  /* ---------- chips ---------- */
+  .chips{display:flex;flex-wrap:wrap;gap:9px;}
+  .chip{font-size:14px;padding:9px 17px;border-radius:999px;background:var(--cream);color:var(--ink);border:1px solid var(--hair);}
+  .cream .chip{background:var(--raised);}
+  .dark .chip{background:var(--dark-2);color:var(--page);border-color:var(--hair-d);}
+  .green .chip{background:rgba(255,255,255,.9);border-color:transparent;}
+
+  /* ---------- figures ---------- */
+  .figs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair);border-radius:20px;overflow:hidden;}
+  @media (min-width:760px){.figs{grid-template-columns:repeat(4,1fr);}}
+  .dark .figs{background:var(--hair-d);}
+  .fig{background:var(--page);padding:clamp(18px,2vw,26px);}
+  .cream .fig{background:var(--cream);}
+  .dark .fig{background:var(--dark);}
+  .fig .n{font-family:var(--display);font-weight:500;letter-spacing:-.045em;font-size:clamp(34px,4.2vw,54px);line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;}
+  .dark .fig .n{color:var(--page);}
+  .fig .n sup{font-size:.36em;color:var(--accent);top:-1.15em;margin-left:2px;}
+  .fig .l{margin-top:11px;font-size:13px;line-height:1.4;color:var(--muted);}
+  .dark .fig .l{color:var(--muted-dark);}
+
+  /* ---------- philosophy beats ---------- */
+  .beats{display:flex;flex-direction:column;}
+  .beat{display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,3vw,42px);align-items:baseline;
+    padding:clamp(14px,2vw,24px) 0;border-top:1px solid var(--hair-d);}
+  .beat:last-child{border-bottom:1px solid var(--hair-d);}
+  .beat .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--accent);font-variant-numeric:tabular-nums;}
+  .beat .v{font-family:var(--display);font-weight:500;letter-spacing:-.038em;line-height:1.04;font-size:clamp(26px,4.6vw,58px);color:var(--page);}
+  .beat .v em{font-style:normal;color:var(--muted-dark);}
+
+  /* ---------- values ---------- */
+  .vals{display:grid;grid-template-columns:1fr;gap:0;}
+  @media (min-width:880px){.vals{grid-template-columns:1fr 1fr;column-gap:clamp(26px,4vw,60px);}}
+  .val{padding:clamp(13px,1.7vw,20px) 0;border-bottom:1px solid var(--hair);display:flex;gap:15px;align-items:baseline;}
+  .val .i{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.1em;flex:none;}
+  .val h3{font-family:var(--display);font-weight:500;font-size:clamp(16px,1.7vw,20px);letter-spacing:-.025em;margin:0 0 3px;}
+  .val p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.4;}
+
+  /* ---------- mark ---------- */
+  .mark{display:flex;align-items:center;gap:13px;}
+  .mark svg{width:38px;height:38px;flex:none;}
+  .mark .wm{font-family:var(--display);font-weight:500;letter-spacing:-.02em;font-size:17px;line-height:1.1;}
+  .mark .wm small{display:block;font-family:var(--mono);font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:3px;font-weight:400;}
+  .dark .mark .wm small{color:var(--accent);}
+  .green .mark .wm small{color:#0B4436;}
+
+  .btn{display:inline-flex;align-items:center;gap:11px;background:var(--accent);color:var(--ink);
+    border-radius:999px;padding:15px 26px;font-size:15px;font-weight:600;text-decoration:none;}
+  .btn .dot{width:9px;height:9px;border-radius:50%;background:var(--ink);}
+  .btn.inv{background:var(--ink);color:var(--accent);} .btn.inv .dot{background:var(--accent);}
+  .btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}
+
+  .contact{display:flex;flex-wrap:wrap;gap:10px 42px;font-size:15px;}
+  .contact div span{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;opacity:.62;margin-bottom:4px;}
+
+  .fn{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);line-height:1.7;}
+  .dark .fn{color:var(--muted-dark);}
+  .green .fn{color:#0B4436;}
+
+  @media print{
+    body{background:#fff;} .deck{gap:0;padding:0;max-width:none;}
+    .slide{page-break-after:always;border-radius:0;min-height:100vh;}
+  }
+</style>
+
+<div class="deck">
+
+<!-- 01 COVER -->
+<section class="slide dark flush" style="min-height:min(90vh,860px)">
+  <div class="photo full"><canvas data-art="atmos" aria-hidden="true"></canvas></div>
+  <div class="scrim"></div>
+  <div class="chrome"><span>Shakti AI TechLabs</span><span class="n">01 / 11</span></div>
+  <div class="over stack" style="padding:clamp(26px,4.4vw,64px)">
+    <div class="mark">
+      <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <path d="M50 5 L95 50 L50 95 L5 50 Z" stroke="#00CE9F" stroke-width="6"/>
+        <path d="M64 32 H44 a9 9 0 0 0 0 18 h12 a9 9 0 0 1 0 18 H36" stroke="#FCFCFA" stroke-width="6.5" stroke-linecap="square"/>
+      </svg>
+      <span class="wm" style="color:#FCFCFA">Shakti AI TechLabs<small>Building Global Ventures</small></span>
+    </div>
+    <h1 style="color:#FCFCFA;max-width:15ch">Empowering founders. <span class="q">Building the future.</span></h1>
+    <div class="fn">Vadodara, India &nbsp;·&nbsp; The innovation engine of the Shakti Ecosystem</div>
+  </div>
+</section>
+
+<!-- 02 THE GAP -->
+<section class="slide dark flush">
+  <div class="photo full"><canvas data-art="founder" aria-hidden="true"></canvas></div>
+  <div class="scrim up"></div>
+  <div class="chrome"><span>Why we exist</span><span class="n">02 / 11</span></div>
+  <div class="over stack" style="padding:clamp(26px,4.4vw,64px);justify-content:flex-end;height:100%;display:flex;">
+    <div style="margin-top:auto">
+      <h2 style="color:#FCFCFA;max-width:17ch">Every great company begins with an idea. <span class="q">Very few survive what comes next.</span></h2>
+      <p class="say">Ambition is not enough. Shakti AI TechLabs exists to close that gap.</p>
+    </div>
+  </div>
+  <span class="tagp" style="position:absolute;right:16px;bottom:16px;z-index:3;font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;background:rgba(0,206,159,.92);color:#0B2C24;padding:4px 10px;border-radius:999px;font-weight:600">Photo · Founder focus</span>
+</section>
+
+<!-- 03 THE GAP, DIAGRAMMED -->
+<section class="slide">
+  <div class="chrome"><span>The gap</span><span class="n">03 / 11</span></div>
+  <div class="stack">
+    <div>
+      <p class="eyebrow">The gap</p>
+      <h2 style="max-width:20ch">Where ideas stall <span class="q">without an ecosystem.</span></h2>
+    </div>
+    <div class="dgm-wrap">
+      <svg class="dgm" viewBox="0 0 900 300" role="img" aria-label="Diagram: most ideas stall between validation and scale; Shakti AI TechLabs bridges the gap.">
+        <defs>
+          <linearGradient id="fade" x1="0" x2="1">
+            <stop offset="0" stop-color="#00CE9F" stop-opacity=".95"/>
+            <stop offset="1" stop-color="#00CE9F" stop-opacity=".18"/>
+          </linearGradient>
+          <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#111111"/>
+          </marker>
+        </defs>
+
+        <!-- baseline -->
+        <line x1="40" y1="215" x2="860" y2="215" stroke="#111111" stroke-opacity=".18" stroke-width="1.5"/>
+        <text class="lbl" x="40" y="245" fill="#616161">Idea</text>
+        <text class="lbl" x="860" y="245" fill="#616161" text-anchor="end">Global scale</text>
+
+        <!-- the chasm -->
+        <path d="M330 215 L560 215" stroke="#F4F7E9" stroke-width="26" stroke-linecap="round"/>
+        <path d="M330 215 L560 215" stroke="#111111" stroke-opacity=".14" stroke-width="1.5" stroke-dasharray="5 7"/>
+        <text class="lbl" x="445" y="262" fill="#8C8D86" text-anchor="middle">The gap most founders fall into</text>
+
+        <!-- ascending path with us -->
+        <path d="M60 215 C 240 215, 300 120, 445 108 C 600 96, 700 70, 850 46"
+              fill="none" stroke="url(#fade)" stroke-width="9" stroke-linecap="round"/>
+        <path d="M60 215 C 240 215, 300 120, 445 108 C 600 96, 700 70, 850 46"
+              fill="none" stroke="#00CE9F" stroke-width="9" stroke-linecap="round" opacity=".95"/>
+
+        <!-- descending path without -->
+        <path d="M60 215 C 200 215, 280 218, 330 219 C 400 221, 440 244, 470 276"
+              fill="none" stroke="#8C8D86" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 9" opacity=".8"/>
+
+        <!-- nodes -->
+        <g>
+          <circle cx="60" cy="215" r="9" fill="#111111"/>
+          <circle cx="445" cy="108" r="13" fill="#111111"/>
+          <circle cx="445" cy="108" r="5" fill="#00CE9F"/>
+          <circle cx="850" cy="46" r="9" fill="#00CE9F" stroke="#111111" stroke-width="3"/>
+        </g>
+        <text class="ttl" x="445" y="84" fill="#111111" text-anchor="middle">Shakti AI TechLabs</text>
+        <text class="sml" x="445" y="70" fill="#616161" text-anchor="middle">Ecosystem · Guidance · Execution</text>
+        <text class="lbl" x="836" y="30" fill="#111111" text-anchor="end">Globally scalable venture</text>
+        <text class="sml" x="478" y="292" fill="#8C8D86">Stalled</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 04 BEFORE / AFTER -->
+<section class="slide">
+  <div class="chrome"><span>The difference</span><span class="n">04 / 11</span></div>
+  <div class="stack">
+    <div>
+      <p class="eyebrow">The difference</p>
+      <h2 style="max-width:19ch">What changes <span class="q">when you build with us.</span></h2>
+    </div>
+    <div class="ba">
+      <div class="bf">
+        <span class="tg">Building alone</span>
+        <h3>Every lesson learned the expensive way.</h3>
+        <ul>
+          <li><span class="m">✕</span><span>Advice that stops at the slide deck.</span></li>
+          <li><span class="m">✕</span><span>Mentors, capital and infrastructure in three places.</span></li>
+          <li><span class="m">✕</span><span>A generic playbook on a specific company.</span></li>
+          <li><span class="m">✕</span><span>Every introduction starts from zero.</span></li>
+        </ul>
+      </div>
+      <div class="af">
+        <span class="tg">Building with us</span>
+        <h3>An ecosystem that has already done it.</h3>
+        <ul>
+          <li><span class="m">✓</span><span>Operators who build alongside you.</span></li>
+          <li><span class="m">✓</span><span>Guidance, resources and network under one roof.</span></li>
+          <li><span class="m">✓</span><span>An approach that adapts to your stage.</span></li>
+          <li><span class="m">✓</span><span>Seven industries of experience on call.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 WHAT WE DO — JOURNEY DIAGRAM -->
+<section class="slide cream">
+  <div class="chrome"><span>What we do</span><span class="n">05 / 11</span></div>
+  <div class="stack">
+    <div>
+      <p class="eyebrow">What we do</p>
+      <h2 style="max-width:21ch">Six capabilities. <span class="q">One continuous journey.</span></h2>
+    </div>
+    <div class="dgm-wrap">
+      <svg class="dgm" viewBox="0 0 920 400" role="img" aria-label="Diagram: three sequential stages — incubation, acceleration, venture building — supported by three always-on capabilities.">
+        <!-- stage track -->
+        <line x1="70" y1="120" x2="850" y2="120" stroke="#111111" stroke-opacity=".14" stroke-width="2"/>
+        <text class="lbl" x="70" y="52" fill="#616161">Stage-led — the path a venture travels</text>
+
+        <g>
+          <!-- stage 1 -->
+          <circle cx="160" cy="120" r="26" fill="#00CE9F"/>
+          <text class="ttl" x="160" y="126" fill="#111111" text-anchor="middle" font-size="15">1</text>
+          <text class="ttl" x="160" y="176" fill="#111111" text-anchor="middle">Startup Incubation</text>
+          <text class="sml" x="160" y="194" fill="#616161" text-anchor="middle">Validate · Mentor · Structure</text>
+          <!-- stage 2 -->
+          <circle cx="460" cy="120" r="26" fill="#00CE9F"/>
+          <text class="ttl" x="460" y="126" fill="#111111" text-anchor="middle" font-size="15">2</text>
+          <text class="ttl" x="460" y="176" fill="#111111" text-anchor="middle">Startup Acceleration</text>
+          <text class="sml" x="460" y="194" fill="#616161" text-anchor="middle">Market · Operations · Growth</text>
+          <!-- stage 3 -->
+          <circle cx="760" cy="120" r="26" fill="#111111"/>
+          <text class="ttl" x="760" y="126" fill="#00CE9F" text-anchor="middle" font-size="15">3</text>
+          <text class="ttl" x="760" y="176" fill="#111111" text-anchor="middle">Venture Building</text>
+          <text class="sml" x="760" y="194" fill="#616161" text-anchor="middle">Scale · Structure · Exit-ready</text>
+        </g>
+
+        <!-- arrows -->
+        <path d="M196 120 L418 120" stroke="#111111" stroke-opacity=".3" stroke-width="2" marker-end="url(#ar2)"/>
+        <path d="M496 120 L718 120" stroke="#111111" stroke-opacity=".3" stroke-width="2" marker-end="url(#ar2)"/>
+        <defs>
+          <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#111111" fill-opacity=".45"/>
+          </marker>
+        </defs>
+
+        <!-- always-on band -->
+        <rect x="70" y="250" width="780" height="112" rx="22" fill="#FEFFFA"/>
+        <text class="lbl" x="94" y="278" fill="#616161">Always on — available at every stage</text>
+        <g>
+          <circle cx="188" cy="322" r="6" fill="#00CE9F"/>
+          <text class="ttl" x="204" y="320" fill="#111111">Founder Mentorship</text>
+          <text class="sml" x="204" y="336" fill="#616161">Builders who have done it</text>
+
+          <circle cx="428" cy="322" r="6" fill="#00CE9F"/>
+          <text class="ttl" x="444" y="320" fill="#111111">Technology &amp; Innovation</text>
+          <text class="sml" x="444" y="336" fill="#616161">AI, engineering, product</text>
+
+          <circle cx="668" cy="322" r="6" fill="#00CE9F"/>
+          <text class="ttl" x="684" y="320" fill="#111111">Strategic Partnerships</text>
+          <text class="sml" x="684" y="336" fill="#616161">Doors already open</text>
+        </g>
+        <!-- connectors from band to track -->
+        <path d="M160 250 L160 152" stroke="#111111" stroke-opacity=".12" stroke-width="1.5" stroke-dasharray="3 5"/>
+        <path d="M460 250 L460 152" stroke="#111111" stroke-opacity=".12" stroke-width="1.5" stroke-dasharray="3 5"/>
+        <path d="M760 250 L760 152" stroke="#111111" stroke-opacity=".12" stroke-width="1.5" stroke-dasharray="3 5"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 06 APPROACH + PHOTO -->
+<section class="slide">
+  <div class="chrome"><span>Our approach</span><span class="n">06 / 11</span></div>
+  <div class="split r">
+    <div class="photo tall">
+      <canvas data-art="collab" aria-hidden="true"></canvas>
+      <span class="tagp">Photo · Collaboration</span>
+    </div>
+    <div class="stack">
+      <p class="eyebrow">Our approach</p>
+      <h2>Every founder's journey is different. <span class="q">So is ours.</span></h2>
+      <p class="say">Our approach adapts to every stage — from validating an idea to scaling internationally.</p>
+      <div class="figs" style="border-radius:20px">
+        <div class="fig"><div class="n">6</div><div class="l">Capabilities</div></div>
+        <div class="fig"><div class="n">7</div><div class="l">Industries</div></div>
+        <div class="fig"><div class="n">10</div><div class="l">Partner types</div></div>
+        <div class="fig"><div class="n">1</div><div class="l">Ecosystem</div></div>
+      </div>
+      <p class="fn">Structural figures. Traction metrics to be inserted once verified.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 07 ECOSYSTEM ORBIT -->
+<section class="slide green">
+  <div class="chrome"><span>The Shakti Ecosystem</span><span class="n">07 / 11</span></div>
+  <div class="split l">
+    <div class="stack">
+      <p class="eyebrow">The Shakti Ecosystem</p>
+      <h2 style="max-width:17ch">Founders don't get a partner. <span class="q">They get an ecosystem.</span></h2>
+      <p class="say">Seven industries of real operating experience, on call for every venture we build.</p>
+    </div>
+    <div class="dgm-wrap">
+      <svg class="dgm" viewBox="0 0 420 420" role="img" aria-label="Diagram: Shakti AI TechLabs at the centre of seven industries — technology, sports, sustainability, hospitality, engineering, manufacturing and business.">
+        <circle cx="210" cy="210" r="168" fill="none" stroke="#0B2C24" stroke-opacity=".22" stroke-width="1.5"/>
+        <circle cx="210" cy="210" r="118" fill="none" stroke="#0B2C24" stroke-opacity=".14" stroke-width="1.5" stroke-dasharray="3 6"/>
+
+        <!-- spokes + nodes: 7 industries -->
+        <g stroke="#0B2C24" stroke-opacity=".3" stroke-width="1.5">
+          <line x1="210" y1="210" x2="210" y2="42"/>
+          <line x1="210" y1="210" x2="341" y2="115"/>
+          <line x1="210" y1="210" x2="291" y2="370"/>
+          <line x1="210" y1="210" x2="129" y2="370"/>
+          <line x1="210" y1="210" x2="79" y2="115"/>
+          <line x1="210" y1="210" x2="378" y2="210"/>
+          <line x1="210" y1="210" x2="42" y2="210"/>
+        </g>
+
+        <g fill="#111111">
+          <circle cx="210" cy="42" r="7"/><circle cx="341" cy="115" r="7"/>
+          <circle cx="378" cy="210" r="7"/><circle cx="291" cy="370" r="7"/>
+          <circle cx="129" cy="370" r="7"/><circle cx="42" cy="210" r="7"/>
+          <circle cx="79" cy="115" r="7"/>
+        </g>
+
+        <g class="lbl" fill="#0B2C24">
+          <text x="210" y="26" text-anchor="middle">Technology</text>
+          <text x="356" y="104" text-anchor="start">Sports</text>
+          <text x="394" y="213" text-anchor="start">Sustainability</text>
+          <text x="299" y="392" text-anchor="middle">Hospitality</text>
+          <text x="121" y="392" text-anchor="middle">Engineering</text>
+          <text x="26" y="213" text-anchor="end">Manufacturing</text>
+          <text x="64" y="104" text-anchor="end">Business</text>
+        </g>
+
+        <circle cx="210" cy="210" r="58" fill="#111111"/>
+        <path d="M210 178 L242 210 L210 242 L178 210 Z" fill="none" stroke="#00CE9F" stroke-width="3.5"/>
+        <text class="sml" x="210" y="272" fill="#0B2C24" text-anchor="middle">Shakti AI TechLabs</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 08 WHO WE WORK WITH -->
+<section class="slide dark">
+  <div class="chrome"><span>Who we work with</span><span class="n">08 / 11</span></div>
+  <div class="split l">
+    <div class="stack">
+      <p class="eyebrow">Who we work with</p>
+      <h2 style="color:var(--page);max-width:16ch">Partnerships, <span class="q">not transactions.</span></h2>
+      <div class="chips">
+        <span class="chip">Entrepreneurs</span><span class="chip">Early-stage Startups</span>
+        <span class="chip">Growth-stage Companies</span><span class="chip">Innovators</span>
+        <span class="chip">Researchers</span><span class="chip">Student Founders</span>
+        <span class="chip">Enterprises</span><span class="chip">Industry Leaders</span>
+        <span class="chip">Academic Institutions</span><span class="chip">Technology Partners</span>
+      </div>
+    </div>
+    <div class="photo tall">
+      <canvas data-art="network" aria-hidden="true"></canvas>
+      <span class="tagp">Photo · Innovation spaces</span>
+    </div>
+  </div>
+</section>
+
+<!-- 09 VALUES -->
+<section class="slide cream">
+  <div class="chrome"><span>Core values</span><span class="n">09 / 11</span></div>
+  <div class="stack">
+    <div>
+      <p class="eyebrow">Core values</p>
+      <h2 style="max-width:17ch">Six commitments <span class="q">we are held to.</span></h2>
+    </div>
+    <div class="vals">
+      <div class="val"><span class="i">01</span><div><h3>Founder First</h3><p>Every decision begins with empowering entrepreneurs.</p></div></div>
+      <div class="val"><span class="i">02</span><div><h3>Innovation with Purpose</h3><p>Technology should create meaningful impact.</p></div></div>
+      <div class="val"><span class="i">03</span><div><h3>Collaboration Over Competition</h3><p>Great companies are built together.</p></div></div>
+      <div class="val"><span class="i">04</span><div><h3>Execution Excellence</h3><p>Ideas succeed only through disciplined execution.</p></div></div>
+      <div class="val"><span class="i">05</span><div><h3>Integrity Always</h3><p>Trust is the foundation of lasting partnerships.</p></div></div>
+      <div class="val"><span class="i">06</span><div><h3>Global Perspective</h3><p>We build ventures prepared for the world.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 PHILOSOPHY -->
+<section class="slide dark flush">
+  <div class="photo full"><canvas data-art="global" aria-hidden="true"></canvas></div>
+  <div class="scrim"></div>
+  <div class="chrome"><span>Philosophy</span><span class="n">10 / 11</span></div>
+  <div class="over stack" style="padding:clamp(26px,4.4vw,64px)">
+    <p class="eyebrow">Philosophy</p>
+    <div class="beats">
+      <div class="beat"><span class="k">01</span><span class="v">Ideas <em>inspire.</em></span></div>
+      <div class="beat"><span class="k">02</span><span class="v">Execution <em>transforms.</em></span></div>
+      <div class="beat"><span class="k">03</span><span class="v">Collaboration <em>accelerates.</em></span></div>
+      <div class="beat"><span class="k">04</span><span class="v">Impact <em>defines success.</em></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 CLOSE -->
+<section class="slide green" style="min-height:min(76vh,700px)">
+  <div class="chrome"><span>Let's build</span><span class="n">11 / 11</span></div>
+  <div class="stack">
+    <div class="mark">
+      <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <path d="M50 5 L95 50 L50 95 L5 50 Z" stroke="#111111" stroke-width="6"/>
+        <path d="M64 32 H44 a9 9 0 0 0 0 18 h12 a9 9 0 0 1 0 18 H36" stroke="#111111" stroke-width="6.5" stroke-linecap="square" opacity=".45"/>
+      </svg>
+      <span class="wm">Shakti AI TechLabs<small>Building Global Ventures</small></span>
+    </div>
+    <h2 style="max-width:17ch">Bring us the idea. <span class="q">We'll help you build the company.</span></h2>
+    <div><a class="btn inv" href="#top">Start a conversation <span class="dot"></span></a></div>
+    <div class="contact">
+      <div><span>Headquarters</span>Vadodara, India</div>
+      <div><span>Web</span>shaktiaitechlabs.com</div>
+      <div><span>Part of</span>The Shakti Ecosystem</div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<script>
+/* Procedural stand-in photography, drawn on canvas so nothing is fetched
+   from an external host. Replaced by real commissioned images before use. */
+(function(){
+  var GREEN=[0,206,159], DARK=[36,36,36], CREAM=[244,247,233];
+  function px(c){var r=c.getBoundingClientRect(),d=Math.min(window.devicePixelRatio||1,2);
+    c.width=Math.max(1,Math.round(r.width*d));c.height=Math.max(1,Math.round(r.height*d));return{w:c.width,h:c.height,d:d};}
+  function rgba(a,al){return 'rgba('+a[0]+','+a[1]+','+a[2]+','+al+')';}
+  function grain(g,w,h,amt){var n=Math.round(w*h*0.014);
+    for(var i=0;i<n;i++){g.fillStyle='rgba(255,255,255,'+(Math.random()*amt)+')';g.fillRect(Math.random()*w,Math.random()*h,1,1);}}
+
+  function atmos(c){var s=px(c),g=c.getContext('2d'),w=s.w,h=s.h;
+    g.fillStyle=rgba(DARK,1);g.fillRect(0,0,w,h);
+    [[0.72,0.30,0.52,GREEN,0.58],[0.90,0.66,0.40,GREEN,0.32],[0.52,0.86,0.44,CREAM,0.10],[0.34,0.16,0.34,GREEN,0.14]]
+    .forEach(function(b){var r=g.createRadialGradient(w*b[0],h*b[1],0,w*b[0],h*b[1],Math.max(w,h)*b[2]);
+      r.addColorStop(0,rgba(b[3],b[4]));r.addColorStop(1,rgba(b[3],0));g.fillStyle=r;g.fillRect(0,0,w,h);});
+    grain(g,w,h,0.03);}
+
+  function founder(c){ // soft interior light, single figure implied
+    var s=px(c),g=c.getContext('2d'),w=s.w,h=s.h;
+    var lg=g.createLinearGradient(0,0,w,h);
+    lg.addColorStop(0,'rgb(16,18,17)');lg.addColorStop(1,rgba(DARK,1));
+    g.fillStyle=lg;g.fillRect(0,0,w,h);
+    var r=g.createRadialGradient(w*0.68,h*0.34,0,w*0.68,h*0.34,Math.max(w,h)*0.6);
+    r.addColorStop(0,rgba(GREEN,0.34));r.addColorStop(0.5,rgba(GREEN,0.09));r.addColorStop(1,rgba(GREEN,0));
+    g.fillStyle=r;g.fillRect(0,0,w,h);
+    // window slats
+    g.globalAlpha=.16;
+    for(var i=0;i<7;i++){g.fillStyle=rgba(CREAM,0.5);
+      g.fillRect(w*(0.52+i*0.075),0,w*0.012,h);}
+    g.globalAlpha=1;
+    // desk silhouette
+    g.fillStyle='rgba(8,9,8,.85)';g.fillRect(0,h*0.78,w,h*0.22);
+    var r2=g.createRadialGradient(w*0.30,h*0.60,0,w*0.30,h*0.60,Math.min(w,h)*0.42);
+    r2.addColorStop(0,'rgba(10,11,10,.75)');r2.addColorStop(1,'rgba(10,11,10,0)');
+    g.fillStyle=r2;g.fillRect(0,0,w,h);
+    grain(g,w,h,0.034);}
+
+  function collab(c){var s=px(c),g=c.getContext('2d'),w=s.w,h=s.h;
+    g.fillStyle=rgba(DARK,1);g.fillRect(0,0,w,h);
+    [[0.36,0.44,0.30],[0.60,0.50,0.30],[0.48,0.66,0.30]].forEach(function(o){
+      var R=Math.min(w,h)*o[2];
+      var r=g.createRadialGradient(w*o[0],h*o[1],R*0.15,w*o[0],h*o[1],R);
+      r.addColorStop(0,rgba(GREEN,0.36));r.addColorStop(1,rgba(GREEN,0.02));
+      g.fillStyle=r;g.beginPath();g.arc(w*o[0],h*o[1],R,0,7);g.fill();
+      g.strokeStyle=rgba(GREEN,0.32);g.lineWidth=Math.max(1,s.d);
+      g.beginPath();g.arc(w*o[0],h*o[1],R,0,7);g.stroke();});
+    for(var k=0;k<150;k++){var a=Math.random()*7,rr=Math.random()*Math.min(w,h)*0.46;
+      g.fillStyle=rgba(CREAM,Math.random()*0.14);
+      g.fillRect(w*0.48+Math.cos(a)*rr,h*0.55+Math.sin(a)*rr,s.d,s.d);}
+    grain(g,w,h,0.028);}
+
+  function network(c){ // connected nodes — innovation space
+    var s=px(c),g=c.getContext('2d'),w=s.w,h=s.h;
+    g.fillStyle=rgba(DARK,1);g.fillRect(0,0,w,h);
+    var r=g.createRadialGradient(w*0.5,h*0.45,0,w*0.5,h*0.45,Math.max(w,h)*0.62);
+    r.addColorStop(0,rgba(GREEN,0.22));r.addColorStop(1,rgba(GREEN,0));
+    g.fillStyle=r;g.fillRect(0,0,w,h);
+    var pts=[],N=26;
+    for(var i=0;i<N;i++)pts.push([Math.random()*w,Math.random()*h]);
+    g.lineWidth=Math.max(1,s.d*0.8);
+    for(var a=0;a<N;a++)for(var b=a+1;b<N;b++){
+      var dx=pts[a][0]-pts[b][0],dy=pts[a][1]-pts[b][1],d=Math.sqrt(dx*dx+dy*dy);
+      if(d<Math.min(w,h)*0.30){g.strokeStyle=rgba(GREEN,0.30*(1-d/(Math.min(w,h)*0.30)));
+        g.beginPath();g.moveTo(pts[a][0],pts[a][1]);g.lineTo(pts[b][0],pts[b][1]);g.stroke();}}
+    pts.forEach(function(p){g.fillStyle=rgba(CREAM,0.55);
+      g.beginPath();g.arc(p[0],p[1],s.d*1.6,0,7);g.fill();});
+    grain(g,w,h,0.03);}
+
+  function global(c){var s=px(c),g=c.getContext('2d'),w=s.w,h=s.h;
+    var lg=g.createLinearGradient(0,0,0,h);
+    lg.addColorStop(0,'rgb(20,22,21)');lg.addColorStop(0.62,rgba(DARK,1));lg.addColorStop(1,'rgb(13,14,13)');
+    g.fillStyle=lg;g.fillRect(0,0,w,h);
+    var hy=h*0.66;
+    var r=g.createRadialGradient(w*0.26,hy,0,w*0.26,hy,w*0.66);
+    r.addColorStop(0,rgba(GREEN,0.44));r.addColorStop(1,rgba(GREEN,0));
+    g.fillStyle=r;g.fillRect(0,0,w,h);
+    g.strokeStyle=rgba(CREAM,0.20);g.lineWidth=Math.max(1,s.d);
+    g.beginPath();g.moveTo(0,hy);g.lineTo(w,hy);g.stroke();
+    for(var i=0;i<44;i++){var bw=w*(0.010+Math.random()*0.028),bx=w*(i/44)+Math.random()*w*0.010;
+      var bh=h*(0.04+Math.random()*0.24);
+      g.fillStyle='rgba(9,10,9,'+(0.6+Math.random()*0.35)+')';g.fillRect(bx,hy-bh,bw,bh);}
+    grain(g,w,h,0.032);}
+
+  var ART={atmos:atmos,founder:founder,collab:collab,network:network,global:global};
+  function draw(){document.querySelectorAll('canvas[data-art]').forEach(function(c){
+    var f=ART[c.getAttribute('data-art')];if(f)f(c);});}
+  draw();
+  var t;addEventListener('resize',function(){clearTimeout(t);t=setTimeout(draw,220);});
+})();
+</script>
