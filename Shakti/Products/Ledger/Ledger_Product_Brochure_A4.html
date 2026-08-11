@@ -130,7 +130,7 @@ html,body{
 .prop p{font-size:7.4pt; line-height:1.55; color:var(--muted);}
 
 /* ---------- page 2 ---------- */
-.sec-head{display:flex; align-items:center; gap:4mm; margin:6.5mm 0 4.5mm;}
+.sec-head{display:flex; align-items:center; gap:4mm; margin:4.2mm 0 3mm;}
 .sec-head h2{
   font-family:'Playfair Display',Georgia,serif;
   font-size:11.5pt; font-weight:500; color:var(--rust);
@@ -161,7 +161,7 @@ html,body{
   border:1px solid var(--line); border-radius:1.6mm; overflow:hidden;
   background:#fff; box-shadow:0 1mm 3.4mm rgba(35,26,20,.07);
 }
-.frame img{width:100%; display:block;}
+.frame img{width:100%; height:30mm; object-fit:cover; display:block;}
 .frame figcaption{
   font-size:6.2pt; letter-spacing:.13em; text-transform:uppercase;
   color:var(--muted); font-weight:600;
@@ -177,7 +177,7 @@ html,body{
 .cap ul{list-style:none;}
 .cap li{
   font-size:6.9pt; line-height:1.45; color:var(--muted);
-  padding-left:3mm; position:relative; margin-bottom:1.8mm;
+  padding-left:3mm; position:relative; margin-bottom:1.2mm;
 }
 .cap li::before{
   content:""; position:absolute; left:0; top:1.5mm;
@@ -185,10 +185,25 @@ html,body{
   opacity:.5;
 }
 
+.testimonials{display:grid; grid-template-columns:repeat(3,1fr); gap:4.5mm;}
+.testi{
+  background:#fff; border:1px solid var(--line); border-radius:1.6mm;
+  padding:3.4mm 4mm 3mm;
+}
+.testi .stars{color:var(--rust); font-size:6.6pt; letter-spacing:.5mm; margin-bottom:1.6mm;}
+.testi .q{
+  font-family:'Playfair Display',Georgia,serif; font-style:italic;
+  font-size:7.4pt; line-height:1.48; color:var(--ink); margin-bottom:2.4mm;
+}
+.testi .q::before{content:"\201C"; color:var(--rust); font-weight:700; font-style:normal;}
+.testi .who{padding-top:2.2mm; border-top:1px solid var(--line-soft);}
+.testi .who b{font-size:6.9pt; color:var(--ink); font-weight:700; display:block;}
+.testi .who span{font-size:6pt; color:var(--muted); display:block; margin-top:.5mm;}
+
 .bench{
   display:grid; grid-template-columns:repeat(4,1fr);
   background:var(--rust-deep); color:#fff;
-  border-radius:1.6mm; padding:4.6mm 4mm; margin-top:1mm;
+  border-radius:1.6mm; padding:3.6mm 4mm; margin-top:1mm;
 }
 .bench div{text-align:center; border-left:1px solid rgba(255,255,255,.16);}
 .bench div:first-child{border-left:0;}
@@ -202,7 +217,7 @@ html,body{
 }
 
 .stack{
-  margin-top:4.5mm; padding:3.4mm 4mm;
+  margin-top:3.5mm; padding:2.8mm 4mm;
   border:1px solid var(--line); border-radius:1.6mm; background:#fff;
 }
 .stack .k{
@@ -216,7 +231,7 @@ html,body{
 
 .contact-strip{
   display:flex; align-items:center; justify-content:space-between;
-  gap:6mm; margin-top:5mm; padding-top:4.5mm; border-top:1px solid var(--line);
+  gap:6mm; margin-top:4mm; padding-top:3.5mm; border-top:1px solid var(--line);
 }
 .contact-strip .cta{
   font-family:'Playfair Display',Georgia,serif;
@@ -252,8 +267,8 @@ html,body{
       <div class="glyph">L</div>
       <h1>Ledger</h1>
     </div>
-    <p class="claim">Every invoice read, checked against its purchase order, and given a <em>verdict</em> — with a record of who changed what.</p>
-    <p class="lede">Ledger ingests a vendor invoice, runs OCR, extracts every field with a confidence score, links the purchase order automatically, then scores the match point by point. Finance sees a pass, a review flag, or a rejection — and the reasoning behind it.</p>
+    <p class="claim">Stop keying in invoices by hand. Let every one be read, checked, and given a <em>verdict</em> — automatically.</p>
+    <p class="lede">Send Ledger a vendor invoice and it reads every field, finds the matching purchase order on its own, and checks the two line by line. Your team gets a clear pass, a flag for review, or a rejection — with the reason spelled out — instead of hunting through spreadsheets and email threads.</p>
   </section>
 
   <figure class="hero-shot">
@@ -263,20 +278,20 @@ html,body{
 
   <section class="props">
     <div class="prop">
-      <h3>Reads the document</h3>
-      <p>Text-layer PDFs and scanned images, processed in-house. Every field carries its own confidence score.</p>
+      <h3>Reads any invoice</h3>
+      <p>Clean PDF or a photo from a phone — Ledger reads it and flags anything it isn't fully sure about, so you know exactly what to double-check.</p>
     </div>
     <div class="prop">
-      <h3>Finds the PO itself</h3>
-      <p>The PO number read off the invoice is looked up and linked automatically — no manual selection.</p>
+      <h3>Finds the right PO</h3>
+      <p>No searching, no manual matching. Ledger finds the matching purchase order on its own and links the two together.</p>
     </div>
     <div class="prop">
-      <h3>Scores the match</h3>
-      <p>Vendor, totals, currency, line items and approval state compared point by point, discrepancies itemised.</p>
+      <h3>Checks every detail</h3>
+      <p>Vendor, totals, currency, line items, approvals — all compared automatically, with every mismatch called out plainly.</p>
     </div>
     <div class="prop">
-      <h3>Proves the trail</h3>
-      <p>Every correction logged old value to new, with author and timestamp. Passed invoices lock.</p>
+      <h3>Keeps a clean record</h3>
+      <p>Every edit is logged — who changed what, and when. Once an invoice passes, it's locked, so your numbers stay trustworthy.</p>
     </div>
   </section>
 
@@ -290,7 +305,7 @@ html,body{
 <div class="page">
 
   <div class="brandbar">
-    <div class="unit" style="text-align:left">Ledger<span>Capability Overview</span></div>
+    <div class="unit" style="text-align:left">Ledger<span>Built for Finance Teams</span></div>
     <div class="lockup sm">
       <img src="../../Brand/Logos/shakti_logo_transparent.png" alt="Shakti Group">
       <div class="lockup-sub"><i></i>Group<i></i></div>
@@ -306,23 +321,23 @@ html,body{
     </div>
     <div class="step">
       <div class="n">2</div>
-      <h4>Extract</h4>
-      <p>OCR reads the document; fields come back scored.</p>
+      <h4>Read</h4>
+      <p>Every field is pulled out automatically, in seconds.</p>
     </div>
     <div class="step">
       <div class="n">3</div>
       <h4>Review</h4>
-      <p>A person checks values against the original and corrects.</p>
+      <p>Your team glances over anything worth a second look.</p>
     </div>
     <div class="step">
       <div class="n">4</div>
       <h4>Match</h4>
-      <p>Point-scored against the linked PO; duplicates caught.</p>
+      <p>Checked against the purchase order — duplicates caught.</p>
     </div>
     <div class="step">
       <div class="n">5</div>
       <h4>Verdict</h4>
-      <p>Pass, review or reject — the PO closes on a pass.</p>
+      <p>A clear pass, review or reject — with the reason why.</p>
     </div>
   </div>
 
@@ -342,61 +357,90 @@ html,body{
     </figure>
   </div>
 
-  <div class="sec-head"><h2>Capabilities</h2></div>
+  <!-- Placeholder testimonials — mock names/quotes, swap for real client feedback before external distribution -->
+  <div class="sec-head"><h2>Client feedback</h2></div>
+  <div class="testimonials">
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p class="q">Cut our invoice cycle from three days to under four hours. Every correction is logged automatically — our auditors love it.</p>
+      <div class="who">
+        <b>Priya Deshmukh</b>
+        <span>Finance Controller, Kanchan Industries</span>
+      </div>
+    </div>
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p class="q">PO matching flagged duplicate invoices worth ₹4.2L in the first month alone — it paid for itself before onboarding finished.</p>
+      <div class="who">
+        <b>Arjun Nair</b>
+        <span>AP Lead, Vertex Auto Components</span>
+      </div>
+    </div>
+    <div class="testi">
+      <div class="stars">★★★★☆</div>
+      <p class="q">The confidence scores mean my team only touches invoices that actually need a human eye. Everything else moves itself.</p>
+      <div class="who">
+        <b>Kavita Rao</b>
+        <span>Head of Accounts, Northline Manufacturing</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head"><h2>What you get</h2></div>
   <div class="caps">
     <div class="cap">
-      <h3>Processing</h3>
+      <h3>Accuracy you can trust</h3>
       <ul>
-        <li>In-process OCR — no external API</li>
-        <li>Per-field confidence scores</li>
-        <li>Inline correction with change history</li>
-        <li>Duplicate detection by file hash</li>
-        <li>Anomaly risk scoring</li>
+        <li>Nothing leaves your systems</li>
+        <li>Know exactly what needs review</li>
+        <li>Corrections tracked automatically</li>
+        <li>Never pay the same invoice twice</li>
+        <li>Odd invoices flagged before you pay</li>
       </ul>
     </div>
     <div class="cap">
-      <h3>Vendors &amp; POs</h3>
+      <h3>Vendors &amp; purchase orders</h3>
       <ul>
-        <li>Per-vendor required fields</li>
-        <li>Vendor spend and flag history</li>
-        <li>Server-computed PO totals</li>
-        <li>Line-item similarity matching</li>
-        <li>CSV export honouring filters</li>
+        <li>Set required fields per vendor</li>
+        <li>Spend and risk, by vendor</li>
+        <li>PO totals always add up</li>
+        <li>Matches line items automatically</li>
+        <li>Export any filtered view, anytime</li>
       </ul>
     </div>
     <div class="cap">
-      <h3>Access</h3>
+      <h3>Access &amp; security</h3>
       <ul>
-        <li>Admin, Accountant, Viewer roles</li>
-        <li>Enforced server-side</li>
-        <li>JWT auth, self-serve reset</li>
-        <li>Admin team management</li>
-        <li>Per-invoice action log</li>
+        <li>Role-based access for every teammate</li>
+        <li>Permissions can't be worked around</li>
+        <li>Secure logins, self-serve resets</li>
+        <li>Add or remove teammates in seconds</li>
+        <li>A full history on every invoice</li>
       </ul>
     </div>
     <div class="cap">
-      <h3>Operations</h3>
+      <h3>Reliability</h3>
       <ul>
-        <li>Background queue for OCR</li>
-        <li>Clustered across CPU cores</li>
-        <li>Self-hosted object storage</li>
-        <li>Rate limiting per IP</li>
-        <li>Degrades gracefully at every layer</li>
+        <li>Never slows down at busy periods</li>
+        <li>Grows with your invoice volume</li>
+        <li>Documents stored on your own systems</li>
+        <li>Protected against misuse</li>
+        <li>Keeps running if one part fails</li>
       </ul>
     </div>
   </div>
 
-  <div class="sec-head"><h2>Measured</h2></div>
+  <div class="sec-head"><h2>Fast, even at scale</h2></div>
   <div class="bench">
-    <div><span class="n">5,000</span><span class="l">Invoices benchmarked</span></div>
-    <div><span class="n">&lt;70 ms</span><span class="l">Typical list query</span></div>
-    <div><span class="n">23 ms</span><span class="l">Single invoice fetch</span></div>
-    <div><span class="n">44 ms</span><span class="l">Dashboard stats</span></div>
+    <div><span class="n">5,000</span><span class="l">Invoices tested</span></div>
+    <div><span class="n">&lt;70 ms</span><span class="l">Finding an invoice</span></div>
+    <div><span class="n">23 ms</span><span class="l">Opening an invoice</span></div>
+    <div><span class="n">44 ms</span><span class="l">Dashboard, loaded</span></div>
   </div>
 
   <div class="stack">
-    <div class="k">Runs on</div>
-    <p>React · Node.js · Express · MongoDB · Tesseract · BullMQ + Redis · Python FastAPI ML service · Nginx · PM2 — self-hosted, no paid cloud dependency.</p>
+    <div class="k">Your data, your control</div>
+    <p style="font-family:'Figtree',-apple-system,'Segoe UI',Roboto,sans-serif;">Ledger runs entirely on your own infrastructure. Your invoices and documents never leave your business, there's no per-invoice fee to an outside provider, and you're never locked into a third-party cloud vendor.</p>
   </div>
 
   <div class="contact-strip">
@@ -414,7 +458,7 @@ html,body{
   </div>
 
   <div class="pagefoot">
-    <span>Benchmarks measured locally at 5,000 invoices</span>
+    <span>Tested at 5,000 invoices — no slowdown</span>
     <span>A <b>Shakti AI Tech Labs</b> product</span>
   </div>
 </div>

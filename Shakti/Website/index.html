@@ -196,16 +196,16 @@
             inset: -5%;
             background: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&q=88&auto=format&fit=crop') center 42%/cover;
             will-change: transform;
-            filter: brightness(0.78) contrast(1.12) saturate(0.9);
+            filter: brightness(1.02) contrast(1.12) saturate(0.9);
         }
         .hero-bg::after {
             content: '';
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(circle at 52% 42%, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0.18) 32%, rgba(0,0,0,0.7) 100%),
-                linear-gradient(90deg, rgba(4,4,5,0.74) 0%, rgba(43,33,24,0.44) 42%, rgba(5,5,6,0.56) 100%),
-                linear-gradient(180deg, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.06) 38%, rgba(0,0,0,0.72) 100%);
+                radial-gradient(circle at 52% 42%, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.12) 32%, rgba(0,0,0,0.58) 100%),
+                linear-gradient(90deg, rgba(4,4,5,0.62) 0%, rgba(43,33,24,0.34) 42%, rgba(5,5,6,0.44) 100%),
+                linear-gradient(180deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0.03) 38%, rgba(0,0,0,0.58) 100%);
         }
         .hero-content {
             position: relative;
@@ -1204,14 +1204,17 @@
             transition: all 0.9s var(--ease-out);
         }
         .footer-lockup {
-            width: 100%;
-            max-width: 260px;
-            height: auto;
-            display: block;
+            display: inline-block;
+            color: rgba(255, 255, 255, 0.95);
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: clamp(2.2rem, 4vw, 3.8rem);
+            font-weight: 500;
+            letter-spacing: 0.22em;
+            line-height: 1;
+            text-transform: uppercase;
         }
         @media (min-width: 640px) {
             .footer-logo { margin-bottom: 5.5rem; }
-            .footer-lockup { max-width: 380px; }
         }
         .footer-logo.revealed { opacity: 1; transform: translateY(0); }
         .footer-grid {
@@ -1388,7 +1391,7 @@
     <section class="ecosystem" id="ecosystem">
         <div class="ecosystem-header">
             <div>
-                <div class="section-label" data-reveal>Four Ventures. One Vision.</div>
+                <div class="section-label" data-reveal>Seven Ventures. One Vision.</div>
                 <h2 data-reveal>The Shakti Ecosystem</h2>
             </div>
             <p data-reveal>Distinct companies, one operating philosophy — each pushing the edge of its industry.</p>
@@ -1396,7 +1399,7 @@
         
         <div class="ventures">
             <a class="venture" data-reveal href="https://shaktisportsclub.com/" target="_blank" rel="noopener">
-                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=85" alt="Shakti Sports" class="venture-img">
+                <img src="assets/ShaktiSports.webp" alt="Shakti Sports" class="venture-img">
                 <div class="venture-overlay">
                     <div class="venture-category"><span>01</span><span>Athletics & Performance</span></div>
                     <div class="venture-name">Shakti Sports</div>
@@ -1406,31 +1409,61 @@
                 </div>
             </a>
             <div class="venture" data-reveal>
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=85" alt="Shakti Greens" class="venture-img">
+                <img src="assets/shaktigreens.webp" alt="Shakti Greens" class="venture-img">
                 <div class="venture-overlay">
                     <div class="venture-category"><span>02</span><span>Hospitality & Events</span></div>
                     <div class="venture-name">Shakti Greens</div>
                     <div class="venture-tagline">Creating Timeless Celebrations.</div>
                 </div>
             </div>
-            <a class="venture" data-reveal href="https://www.finelineindia.com/" target="_blank" rel="noopener">
-                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=85" alt="Fine-Line Circuits" class="venture-img">
+            <a class="venture" data-reveal href="https://www.shaktistreets.com/" target="_blank" rel="noopener">
+                <img src="assets/ShaktiStrreets.jpg" alt="Shakti Streets street-side dining mockup" class="venture-img">
                 <div class="venture-overlay">
-                    <div class="venture-category"><span>03</span><span>Electronics & Manufacturing</span></div>
+                    <div class="venture-category"><span>03</span><span>Hospitality & Events</span></div>
+                    <div class="venture-name">Shakti Streets</div>
+                    <div class="venture-tagline">Experiences With Energy.</div>
+                    <div class="venture-vision">A hospitality-forward destination with a lively street-side identity.</div>
+                    <div class="venture-link">Visit site →</div>
+                </div>
+            </a>
+            <a class="venture" data-reveal href="https://fccindia.com/" target="_blank" rel="noopener">
+                <img src="assets/Fine Circuits.jpg" alt="Finecircuits" class="venture-img">
+                <div class="venture-overlay">
+                    <div class="venture-category"><span>04</span><span>Electronics & Manufacturing</span></div>
                     <div class="venture-name">Finecircuits</div>
                     <div class="venture-tagline">Engineering Tomorrow.</div>
                     <div class="venture-vision">Pleasing customers 100% in complex, high-count multilayer printed circuit boards.</div>
                     <div class="venture-link">Visit site →</div>
                 </div>
             </a>
+            <a class="venture" data-reveal href="https://www.shaktilogisticspark.com/" target="_blank" rel="noopener">
+                <img src="https://www.wiskind.com/en/uploads/ueditor/20240621/7f03efcf82e2123673c05ef6c1885019.jpg" alt="Shakti Logistics Park aerial mockup" class="venture-img">
+                <div class="venture-overlay">
+                    <div class="venture-category"><span>05</span><span>Warehousing & Logistics</span></div>
+                    <div class="venture-name">Shakti Logistics Park</div>
+                    <div class="venture-tagline">Built for Flow.</div>
+                    <div class="venture-vision">Industrial and logistics infrastructure shaped for scale, access, and long-term efficiency.</div>
+                    <div class="venture-link">Visit site →</div>
+                </div>
+            </a>
             <div class="venture" data-reveal>
                 <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=85" alt="ShaktiAiTechLabs" class="venture-img">
                 <div class="venture-overlay">
-                    <div class="venture-category"><span>04</span><span>AI Venture Studio</span></div>
+                    <div class="venture-category"><span>06</span><span>AI Venture Studio</span></div>
                     <div class="venture-name">ShaktiAiTechLabs</div>
                     <div class="venture-tagline">Building Global Ventures.</div>
                 </div>
             </div>
+            <a class="venture" data-reveal href="https://www.shaktiequipments.com/" target="_blank" rel="noopener">
+                <img src="https://cdn.sanity.io/images/ej7pr96v/production/c55a07389ddef30b5ace9c0792a94234ae788f76-1365x768.png" alt="Shakti Rental equipment yard mockup" class="venture-img">
+                <div class="venture-overlay">
+                    <div class="venture-category"><span>07</span><span>Rental & Equipment</span></div>
+                    <div class="venture-name">Shakti Rental</div>
+                    <div class="venture-tagline">Rent With Confidence.</div>
+                    <div class="venture-vision">Equipment rental and support for projects that need dependable lifting and handling solutions.</div>
+                    <div class="venture-link">Visit site →</div>
+                </div>
+            </a>
         </div>
     </section>
 
@@ -1542,19 +1575,22 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo" data-reveal>
-                <img src="assets/shakti-logo-full-white.png" alt="Shakti" class="footer-lockup">
+                <span class="footer-lockup">SHAKTI.ONE</span>
             </div>
             <div class="footer-grid">
                 <div class="footer-col">
-                    <p>Building tomorrow across industries — innovation, engineering, hospitality, sports, and sustainability under one vision.</p>
+                    <p>Building tomorrow across industries — innovation, hospitality, logistics, rental, engineering, sports, and sustainability under one vision.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Ventures</h4>
                     <ul>
                         <li><a href="https://shaktisportsclub.com/" target="_blank" rel="noopener">Shakti Sports</a></li>
                         <li><span>Shakti Greens</span></li>
-                        <li><a href="https://www.finelineindia.com/" target="_blank" rel="noopener">Finecircuits</a></li>
+                        <li><a href="https://www.shaktistreets.com/" target="_blank" rel="noopener">Shakti Streets</a></li>
+                        <li><a href="https://fccindia.com/" target="_blank" rel="noopener">Finecircuits</a></li>
+                        <li><a href="https://www.shaktilogisticspark.com/" target="_blank" rel="noopener">Shakti Logistics Park</a></li>
                         <li><span>ShaktiAiTechLabs</span></li>
+                        <li><a href="https://www.shaktiequipments.com/" target="_blank" rel="noopener">Shakti Rental</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
