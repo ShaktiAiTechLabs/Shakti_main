@@ -194,9 +194,9 @@
         .hero-bg {
             position: absolute;
             inset: -5%;
-            background: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&q=88&auto=format&fit=crop') center 42%/cover;
+            background: url('assets/hero.jpg') center 42%/cover;
             will-change: transform;
-            filter: brightness(1.02) contrast(1.12) saturate(0.9);
+            filter: brightness(1.92) contrast(1.0) saturate(0.9);
         }
         .hero-bg::after {
             content: '';
@@ -651,6 +651,30 @@
         .venture:hover .venture-img {
             transform: scale(1.08);
             filter: grayscale(0) brightness(1.08) contrast(1.08) saturate(1.05);
+        }
+        /* Shakti Logistics Park uses its supplied facility photograph and lockup. */
+        .venture-logo {
+            position: absolute;
+            z-index: 2;
+            right: 1.35rem;
+            top: 4.25rem;
+            width: 150px;
+            height: 80px;
+            padding: 0.4rem 0.55rem;
+            background: rgba(255,255,255,0.96);
+            box-shadow: 0 8px 22px rgba(43,33,24,0.2);
+            object-fit: contain;
+            object-position: center;
+            opacity: 1;
+            filter: none;
+            transition: opacity 0.4s ease, transform 0.4s var(--ease-out);
+        }
+        .venture:hover .venture-logo {
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+        @media (min-width: 640px) {
+            .venture-logo { right: 1.8rem; top: 4.6rem; width: 180px; height: 90px; }
         }
         .venture-overlay {
             position: absolute;
@@ -1402,6 +1426,7 @@
                 <img src="assets/ShaktiSports.webp" alt="Shakti Sports" class="venture-img">
                 <div class="venture-overlay">
                     <div class="venture-category"><span>01</span><span>Athletics & Performance</span></div>
+                    <img src="assets/shaktisports.svg" alt="Shakti Sports" class="venture-logo venture-logo--sports">
                     <div class="venture-name">Shakti Sports</div>
                     <div class="venture-tagline">Building Champions.</div>
                     <div class="venture-vision">Building athletes, shaping champions, and a community driven by passion and performance.</div>
@@ -1430,6 +1455,7 @@
                 <img src="assets/Fine Circuits.jpg" alt="Finecircuits" class="venture-img">
                 <div class="venture-overlay">
                     <div class="venture-category"><span>04</span><span>Electronics & Manufacturing</span></div>
+                    <img src="assets/fcc.png" alt="Finecircuits logo" class="venture-logo">
                     <div class="venture-name">Finecircuits</div>
                     <div class="venture-tagline">Engineering Tomorrow.</div>
                     <div class="venture-vision">Pleasing customers 100% in complex, high-count multilayer printed circuit boards.</div>
@@ -1437,9 +1463,10 @@
                 </div>
             </a>
             <a class="venture" data-reveal href="https://www.shaktilogisticspark.com/" target="_blank" rel="noopener">
-                <img src="https://www.wiskind.com/en/uploads/ueditor/20240621/7f03efcf82e2123673c05ef6c1885019.jpg" alt="Shakti Logistics Park aerial mockup" class="venture-img">
+                <img src="assets/shakti-logistics-park.png" alt="Shakti Logistics Park industrial facility" class="venture-img">
                 <div class="venture-overlay">
                     <div class="venture-category"><span>05</span><span>Warehousing & Logistics</span></div>
+                    <img src="assets/shakti-logistics-park-logo.png" alt="Shakti Logistics Park" class="venture-logo">
                     <div class="venture-name">Shakti Logistics Park</div>
                     <div class="venture-tagline">Built for Flow.</div>
                     <div class="venture-vision">Industrial and logistics infrastructure shaped for scale, access, and long-term efficiency.</div>
@@ -1454,10 +1481,11 @@
                     <div class="venture-tagline">Building Global Ventures.</div>
                 </div>
             </div>
-            <a class="venture" data-reveal href="https://www.shaktiequipments.com/" target="_blank" rel="noopener">
-                <img src="https://cdn.sanity.io/images/ej7pr96v/production/c55a07389ddef30b5ace9c0792a94234ae788f76-1365x768.png" alt="Shakti Rental equipment yard mockup" class="venture-img">
+            <a class="venture" data-reveal href="*" target="_blank" rel="noopener">
+                <img src="assets/Shakti_rental.png"alt="Shakti Rental equipment yard mockup" class="venture-img">
                 <div class="venture-overlay">
                     <div class="venture-category"><span>07</span><span>Rental & Equipment</span></div>
+                    <img src="assets/shaktirentallogo.png" alt="Shakti Rental" class="venture-logo venture-logo--rental">
                     <div class="venture-name">Shakti Rental</div>
                     <div class="venture-tagline">Rent With Confidence.</div>
                     <div class="venture-vision">Equipment rental and support for projects that need dependable lifting and handling solutions.</div>
