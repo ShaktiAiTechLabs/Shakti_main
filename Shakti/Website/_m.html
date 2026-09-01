@@ -407,11 +407,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-/* `clip` rather than `hidden`: both stop sideways overflow, but `hidden` turns
-   the body into a scroll container, which silently disables `position:sticky`
-   for every descendant. The sticky asides further down depend on this. */
-body{font-family:'Montserrat',Calibri,'Lato',sans-serif;background:var(--bg-primary);color:var(--text-primary);font-size:1.0625rem;line-height:1.68;overflow-x:clip;text-rendering:optimizeLegibility}
-@supports not (overflow:clip){body{overflow-x:hidden}}
+body{font-family:'Montserrat',Calibri,'Lato',sans-serif;background:var(--bg-primary);color:var(--text-primary);font-size:1.0625rem;line-height:1.68;overflow-x:hidden;text-rendering:optimizeLegibility}
 h1,h2,h3,h4,.serif{font-family:'Cormorant Garamond',Georgia,'Marcellus',serif}
 a{color:var(--espresso)}
 a:hover{color:var(--charcoal)}
@@ -533,19 +529,19 @@ nav.scrolled .nav-toggle{color:var(--charcoal)}
 @keyframes bounce{0%,20%,50%,80%,100%{transform:translateY(0)}40%{transform:translateY(8px)}60%{transform:translateY(4px)}}
 
 /* SECTION LABEL */
-.section-label{display:flex;align-items:center;gap:1rem;font-size:.82rem;text-transform:uppercase;letter-spacing:.2em;color:var(--espresso);margin-bottom:1.6rem;font-weight:600}
+.section-label{display:flex;align-items:center;gap:1rem;font-size:.82rem;text-transform:uppercase;letter-spacing:.2em;color:var(--espresso);margin-bottom:2.35rem;font-weight:600}
 .section-label::before{content:'';width:50px;height:2px;background:var(--accent-gold);transform:scaleX(.6);transform-origin:left center;transition:transform .6s ease}
 .section-label.revealed::before{transform:scaleX(1)}
 
 /* PHILOSOPHY */
-.philosophy{padding:6.5rem 11.2vw 6rem;position:relative;display:grid;grid-template-columns:minmax(220px,24%) minmax(0,1fr);column-gap:3.6vw;row-gap:2.25rem;background:var(--dark-bg);color:var(--dark-text);border-top:1px solid var(--dark-line)}
+.philosophy{padding:10rem 11.2vw 9rem;position:relative;display:grid;grid-template-columns:minmax(220px,24%) minmax(0,1fr);column-gap:3.6vw;row-gap:3.5rem;background:var(--dark-bg);color:var(--dark-text);border-top:1px solid var(--dark-line)}
 .philosophy>.section-label,.philosophy>.philosophy-quote{grid-column:1/-1}
-.philosophy-quote{font-family:'Cormorant Garamond',Georgia,serif;font-size:4.15rem;font-weight:500;line-height:1.1;margin-bottom:0;max-width:1120px;opacity:0;transform:translateY(60px);transition:all .9s var(--ease-out)}
+.philosophy-quote{font-family:'Cormorant Garamond',Georgia,serif;font-size:4.15rem;font-weight:500;line-height:1.1;margin-bottom:4rem;max-width:1120px;opacity:0;transform:translateY(60px);transition:all .9s var(--ease-out)}
 .philosophy-quote.revealed{opacity:1;transform:translateY(0)}
 .principles-intro{align-self:start;font-size:1.05rem;color:var(--dark-muted);max-width:340px;line-height:1.7;opacity:0;transform:translateY(40px);transition:all .8s var(--ease-out) .2s}
 .principles-intro.revealed{opacity:1;transform:translateY(0)}
 .principles{display:flex;flex-direction:column;border-top:1px solid var(--dark-line)}
-.principle{display:grid;grid-template-columns:56px 1fr;gap:1.65rem;padding:1.6rem 0;border-top:1px solid var(--dark-line);align-items:baseline;opacity:0;transform:translateX(-40px);transition:all .7s var(--ease-out)}
+.principle{display:grid;grid-template-columns:56px 1fr;gap:1.65rem;padding:2.15rem 0;border-top:1px solid var(--dark-line);align-items:baseline;opacity:0;transform:translateX(-40px);transition:all .7s var(--ease-out)}
 .principle:first-child{border-top:none}
 .principle.revealed{opacity:1;transform:translateX(0)}
 .principle:nth-child(1){transition-delay:.1s}
@@ -563,20 +559,20 @@ nav.scrolled .nav-toggle{color:var(--charcoal)}
 .principle:nth-child(4):hover .principle-number,.principle:nth-child(4):hover .principle-title{color:var(--accent-1)}
 .principle:nth-child(5):hover .principle-number,.principle:nth-child(5):hover .principle-title{color:var(--accent-2)}
 @media (min-width:640px){
-  .principle{grid-template-columns:70px minmax(230px,26%) minmax(360px,1fr);gap:2.1rem;padding:2rem 0}
+  .principle{grid-template-columns:70px minmax(230px,26%) minmax(360px,1fr);gap:2.1rem;padding:2.85rem 0}
   .principle-title{font-size:2.25rem}
   .principle-desc{grid-column:auto}
 }
 @media (min-width:768px){.philosophy-quote{font-size:4.6rem}}
 @media (max-width:860px){
-  .philosophy{padding:5rem var(--section-x);grid-template-columns:1fr;row-gap:1.75rem}
-  .philosophy-quote{font-size:3rem;margin-bottom:0}
+  .philosophy{padding:8rem var(--section-x);grid-template-columns:1fr;row-gap:2.5rem}
+  .philosophy-quote{font-size:3rem;margin-bottom:1rem}
   .principles-intro{max-width:100%}
 }
 
 /* ECOSYSTEM — horizontal rail */
-.ecosystem{padding:6rem 0 6.5rem;background:var(--dark-bg);color:var(--dark-text);position:relative;border-top:1px solid var(--dark-line)}
-.ecosystem-header{margin:0 11.2vw 3rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,37%);align-items:flex-end;gap:6vw}
+.ecosystem{padding:8.5rem 0 11rem;background:var(--dark-bg);color:var(--dark-text);position:relative;border-top:1px solid var(--dark-line)}
+.ecosystem-header{margin:0 11.2vw 4.5rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,37%);align-items:flex-end;gap:6vw}
 .ecosystem-header h2{font-size:4.75rem;font-weight:500;line-height:1.02;opacity:0;transform:translateY(50px);transition:all .8s var(--ease-out)}
 .ecosystem-header h2.revealed{opacity:1;transform:translateY(0)}
 .ecosystem-header p{color:var(--dark-muted);max-width:520px;font-size:1.2rem;line-height:1.55;opacity:0;transform:translateY(30px);transition:all .8s var(--ease-out) .2s;text-align:right}
@@ -627,8 +623,8 @@ a.venture:hover .venture-link{gap:.9rem;border-color:#DFC178}
   .venture--wide{aspect-ratio:2.1/1}
 }
 @media (max-width:860px){
-  .ecosystem{padding:4.5rem 0 5rem}
-  .ecosystem-header{grid-template-columns:1fr;margin:0 var(--section-x) 2rem}
+  .ecosystem{padding:7rem 0 8rem}
+  .ecosystem-header{grid-template-columns:1fr;margin:0 var(--section-x) 3rem}
   .ecosystem-header h2{font-size:3.15rem}
   .ecosystem-header p{text-align:left}
   .ventures{margin:0 var(--section-x)}
@@ -643,42 +639,24 @@ a.venture:hover .venture-link{gap:.9rem;border-color:#DFC178}
 }
 
 /* QUOTE */
-/* A full-bleed photograph, left clear — Girgaon Chowpatty at golden hour, the
-   Mumbai skyline in silhouette. It runs unblurred and ungraded apart from a
-   small warm push baked into the file, so the band reads as a real place
-   rather than a texture. Photo: Vyacheslav Argenberg, CC BY 4.0.
-   The band is sized to the photo rather than the photo cropped to the band,
-   so there is no parallax here: any drift would have to overscan the image
-   and take an edge off it. */
-.quote-section{position:relative;padding:4rem var(--section-x);min-height:560px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#1A130D;isolation:isolate}
-/* From the point the band is wide enough to hold the quote at its own
-   height, the section takes the photograph's ratio exactly, so the whole
-   frame is on screen — no crop at any edge. Below that the floor height
-   wins and `cover` crops inwards, which is the right trade on a phone. */
-@media (min-width:1100px){.quote-section{aspect-ratio:2400/1115;min-height:0;padding:3rem var(--section-x)}}
-.quote-bg{position:absolute;inset:0;background-image:url('assets/img/quote-bg-city.jpg');background-image:image-set(url('assets/img/quote-bg-city.webp') type('image/webp'),url('assets/img/quote-bg-city.jpg') type('image/jpeg'));background-position:center;background-size:cover;background-repeat:no-repeat}
-/* Only as much shade as the type needs. The ellipse sits under the quote and
-   fades out well before the towers, so the skyline and the sun track on the
-   water stay legible; the vertical pass darkens the two edges where the band
-   meets the ivory sections. */
-.quote-bg-overlay{position:absolute;inset:0;background:
-  radial-gradient(ellipse 66% 46% at 50% 50%,rgba(26,19,13,.64) 0%,rgba(26,19,13,.48) 45%,rgba(26,19,13,.22) 76%,rgba(26,19,13,.1) 100%),
-  linear-gradient(to bottom,rgba(26,19,13,.46) 0%,rgba(26,19,13,.08) 22%,rgba(26,19,13,.1) 76%,rgba(26,19,13,.5) 100%)}
-.quote-content{position:relative;z-index:2;max-width:1040px;text-align:center;color:var(--ivory);opacity:0;transform:translateY(50px) scale(.95);transition:all .9s var(--ease-out)}
+.quote-section{position:relative;padding:6rem var(--section-x);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.quote-bg{position:absolute;inset:-20%;background:url('assets/img/quote-bg.jpg') center/cover;opacity:.28;filter:brightness(1.25) saturate(.6);will-change:transform}
+.quote-bg-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 0%,var(--bg-primary) 78%)}
+.quote-content{position:relative;z-index:2;max-width:800px;text-align:center;opacity:0;transform:translateY(50px) scale(.95);transition:all .9s var(--ease-out)}
 .quote-content.revealed{opacity:1;transform:translateY(0) scale(1)}
-.quote-mark{font-family:'Cormorant Garamond',Georgia,serif;font-size:4.5rem;line-height:.5;color:#E3B94A;margin-bottom:1rem;opacity:.85;display:inline-block;animation:quotePulse 4s ease-in-out infinite}
+.quote-mark{font-family:'Cormorant Garamond',Georgia,serif;font-size:4.5rem;line-height:.5;color:var(--accent-gold);margin-bottom:1.25rem;opacity:.8;display:inline-block;animation:quotePulse 4s ease-in-out infinite}
 @keyframes quotePulse{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.05);opacity:1}}
-.quote-text{font-family:'Cormorant Garamond',Georgia,serif;font-size:2.15rem;font-style:italic;line-height:1.22;margin-bottom:1.4rem;font-weight:500;text-wrap:balance;color:#FBF6F0;text-shadow:0 1px 26px rgba(20,13,8,.55)}
-.quote-attribution{font-size:.86rem;text-transform:uppercase;letter-spacing:.2em;color:rgba(251,246,240,.82);font-weight:600;text-shadow:0 1px 16px rgba(20,13,8,.6)}
-.quote-attribution::before{content:'';display:block;width:50px;height:2px;background:#E3B94A;margin:0 auto 1.15rem}
+.quote-text{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.85rem;font-style:italic;line-height:1.3;margin-bottom:1.75rem;font-weight:500}
+.quote-attribution{font-size:.86rem;text-transform:uppercase;letter-spacing:.2em;color:var(--text-muted);font-weight:600}
+.quote-attribution::before{content:'';display:block;width:50px;height:2px;background:var(--accent-gold);margin:0 auto 1.5rem}
 @media (min-width:640px){
-  .quote-mark{font-size:6rem;margin-bottom:1.25rem}
-  .quote-text{font-size:3.4rem;margin-bottom:1.6rem}
+  .quote-section{padding:8.5rem var(--section-x)}
+  .quote-mark{font-size:6rem;margin-bottom:1.5rem}
+  .quote-text{font-size:2.5rem;margin-bottom:2.25rem}
 }
-@media (min-width:1100px){.quote-text{font-size:4rem}}
 
 /* IMPACT */
-.impact{padding:6rem var(--section-x);background:var(--bg-secondary);position:relative;overflow:hidden}
+.impact{padding:9rem var(--section-x);background:var(--bg-secondary);position:relative;overflow:hidden}
 .impact::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(184,146,43,.1) 0%,transparent 70%);pointer-events:none}
 .impact-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:2.75rem;text-align:center;position:relative;z-index:1}
 .impact-item{opacity:0;transform:translateY(40px);transition:all .75s var(--ease-out)}
@@ -690,21 +668,21 @@ a.venture:hover .venture-link{gap:.9rem;border-color:#DFC178}
 .impact-item h3{font-size:3.2rem;font-weight:600;margin-bottom:.75rem;line-height:1;color:var(--espresso)}
 .impact-item p{font-size:.88rem;text-transform:uppercase;letter-spacing:.15em;color:var(--text-secondary);font-weight:600}
 @media (min-width:640px){.impact-item h3{font-size:4.7rem}}
-@media (min-width:768px){.impact-grid{grid-template-columns:repeat(4,1fr);gap:2.75rem}}
+@media (min-width:768px){.impact-grid{grid-template-columns:repeat(4,1fr);gap:3.5rem}}
 
 /* CONTACT */
-.contact{padding:5.5rem var(--section-x);max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:start;position:relative}
+.contact{padding:9rem var(--section-x);max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:3rem;align-items:start;position:relative}
 .contact::before{content:'';position:absolute;top:3rem;right:0;width:250px;height:250px;background:radial-gradient(circle,rgba(172,119,67,.1) 0%,transparent 70%);pointer-events:none}
 .contact-left{opacity:0;transform:translateX(-40px);transition:all .8s var(--ease-out)}
 .contact-left.revealed{opacity:1;transform:translateX(0)}
-.contact-left h2{font-size:3rem;font-weight:500;line-height:1.1;margin-bottom:1.5rem}
+.contact-left h2{font-size:3rem;font-weight:500;line-height:1.1;margin-bottom:2rem}
 .contact-left p{color:var(--text-secondary);line-height:1.7;max-width:440px;font-size:1.16rem}
 .contact-direct{margin-top:1.6rem;font-size:1rem!important}
 .contact-direct a{color:var(--espresso);font-weight:600;text-decoration:none;border-bottom:1px solid var(--sand);padding-bottom:1px;transition:border-color .3s ease,color .3s ease}
 .contact-direct a:hover{color:var(--charcoal);border-color:var(--espresso)}
 form{opacity:0;transform:translateX(40px);transition:all .8s var(--ease-out) .2s}
 form.revealed{opacity:1;transform:translateX(0)}
-.form-group{margin-bottom:1.7rem;position:relative}
+.form-group{margin-bottom:2.35rem;position:relative}
 .form-group label{display:block;font-size:.82rem;text-transform:uppercase;letter-spacing:.15em;color:var(--text-muted);margin-bottom:.5rem;font-weight:600}
 .form-group input,.form-group textarea,.form-group select{width:100%;padding:.75rem 0;border:none;border-bottom:2px solid var(--border);background:transparent;font-family:'Montserrat',Calibri,sans-serif;font-size:1.12rem;color:var(--text-primary);outline:none;transition:border-color .4s}
 .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--accent-gold)}
@@ -713,45 +691,37 @@ form.revealed{opacity:1;transform:translateX(0)}
 .form-row{display:grid;grid-template-columns:1fr;gap:0}
 @media (min-width:640px){.form-row{grid-template-columns:1fr 1fr;gap:2rem}}
 @media (min-width:968px){
-  .contact{grid-template-columns:1fr 1fr;gap:4.5rem;padding:6.5rem var(--section-x)}
+  .contact{grid-template-columns:1fr 1fr;gap:6rem;padding:11rem var(--section-x)}
   .contact-left h2{font-size:4.25rem}
 }
 
 /* FOOTER */
-footer{background:var(--charcoal);padding:4.5rem var(--section-x) 2rem;position:relative;overflow:hidden}
+footer{background:var(--charcoal);padding:7rem var(--section-x) 2.5rem;position:relative;overflow:hidden}
 footer::before{content:'';position:absolute;top:-10rem;right:-10rem;width:400px;height:400px;background:radial-gradient(circle,rgba(184,146,43,.15) 0%,transparent 70%);pointer-events:none}
 .footer-content{max-width:1200px;margin:0 auto;position:relative;z-index:1}
-.footer-logo{margin-bottom:2.25rem;opacity:0;transform:translateY(60px);transition:all .9s var(--ease-out)}
+.footer-logo{margin-bottom:3.75rem;opacity:0;transform:translateY(60px);transition:all .9s var(--ease-out)}
 .footer-logo.revealed{opacity:1;transform:translateY(0)}
-/* The mark sits as the tittle of the I in SHAKTI.ONE. Sizes are in em so it
-   tracks the wordmark at every breakpoint, and the reserved padding keeps it
-   from colliding with whatever the footer puts above.
-
-   letter-spacing is added after each character, so the I span is half a
-   letter-space wider than the glyph and centring on the span would push the
-   mark right. The -.11em is that half, taken back. */
-.footer-lockup{display:inline-block;position:relative;padding-top:1.2em;color:rgba(255,255,255,.95);font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.2rem,4vw,3.8rem);font-weight:500;letter-spacing:.22em;line-height:1;text-transform:uppercase}
-.lockup-i{position:relative;display:inline-block}
-.footer-mark{position:absolute;left:50%;bottom:100%;transform:translateX(calc(-50% - .11em));height:.98em;width:auto;margin-bottom:.16em}
+.footer-mark{display:block;height:clamp(56px,7vw,88px);width:auto;margin-bottom:1.6rem}
+.footer-lockup{display:inline-block;color:rgba(255,255,255,.95);font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.2rem,4vw,3.8rem);font-weight:500;letter-spacing:.22em;line-height:1;text-transform:uppercase}
 .footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.12)}
 .footer-col p{font-size:1rem;color:#A89684;line-height:1.7;max-width:310px}
-.footer-col h4{font-size:.82rem;text-transform:uppercase;letter-spacing:.2em;color:#A89684;margin-bottom:1.1rem;font-family:'Montserrat',Calibri,sans-serif;font-weight:600}
+.footer-col h4{font-size:.82rem;text-transform:uppercase;letter-spacing:.2em;color:#A89684;margin-bottom:1.5rem;font-family:'Montserrat',Calibri,sans-serif;font-weight:600}
 .footer-col ul{list-style:none}
 .footer-col ul li{margin-bottom:.75rem}
 .footer-col ul li a,.footer-col ul li span{text-decoration:none;color:#A89684;font-size:1rem;transition:all .3s;display:inline-block}
 .footer-col ul li a:hover{color:var(--accent-gold);transform:translateX(4px)}
-.footer-bottom{max-width:1200px;margin:2.5rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;align-items:center;font-size:.92rem;color:#A89684;flex-direction:column;gap:1rem;text-align:center}
+.footer-bottom{max-width:1200px;margin:4rem auto 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;align-items:center;font-size:.92rem;color:#A89684;flex-direction:column;gap:1rem;text-align:center}
 @media (min-width:640px){
-  footer{padding:5.5rem var(--section-x) 2.5rem}
-  .footer-logo{margin-bottom:2.75rem}
-  .footer-bottom{flex-direction:row;gap:0;text-align:left;margin:2.75rem auto 0}
+  footer{padding:9rem var(--section-x) 3.25rem}
+  .footer-logo{margin-bottom:5.5rem}
+  .footer-bottom{flex-direction:row;gap:0;text-align:left;margin:5rem auto 0}
 }
-@media (min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-top:2rem}}
+@media (min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-top:3rem}}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-  [data-reveal],.logo,.nav-links li,.hero p,.hero-buttons,.scroll-indicator,.footer-logo,form,.contact-left,.quote-content,.impact-item,.venture,.ecosystem-header h2,.ecosystem-header p,.principle,.principles-intro,.philosophy-quote{opacity:1!important;transform:none!important}
+  [data-reveal],.logo,.nav-links li,.hero p,.hero-buttons,.footer-logo,form,.contact-left,.quote-content,.impact-item,.venture,.ecosystem-header h2,.ecosystem-header p,.principle,.principles-intro,.philosophy-quote{opacity:1!important;transform:none!important}
 }
 
 /* ==========================================================================
@@ -764,9 +734,8 @@ footer::before{content:'';position:absolute;top:-10rem;right:-10rem;width:400px;
 /* These five ran between 1.95:1 and 3.61:1 against ivory. Same palette,
    readable weights. The principle numerals were the worst offender. */
 nav.scrolled .logo-sub,
-.form-group label { color: var(--text-secondary); }
-/* .quote-attribution used to sit on ivory; it now sits on the photograph and
-   is set light against it, so it is no longer part of this correction. */
+.form-group label,
+.quote-attribution { color: var(--text-secondary); }
 .principle-number  { color: var(--espresso); }
 
 /* The hero artwork sits at its own ratio, so the image fills the box exactly. */
@@ -847,42 +816,16 @@ nav:not(.scrolled) :focus-visible,
 /* --------------------------------------------------------------------------
    Hero composition
 
-   The artwork sets its own type. SHAKTI SPORTS, SHAKTI STREETS and the
-   banquet-hall fascia all carry lettering across the lower left — precisely
-   where the headline used to sit. A text shadow separates type from a
-   picture; it cannot separate type from other type, so the two sets of words
-   read as one tangle no matter how the shadow is tuned.
+   The copy sits on the artwork, and nothing — no scrim, no tint, no gradient —
+   is drawn over the illustration. Legibility comes from layered text shadows:
+   a tight near-opaque core that separates the glyph from whatever is directly
+   behind it, then two progressively wider, softer casts that darken the
+   surrounding pixels enough for the edge to read. One big blur cannot do both
+   jobs, which is why these are stacked rather than tuned.
 
-   So the copy moves to the right half, over the container yard and the water,
-   where the only signage is small and low in contrast. A scrim now grades in
-   from the right edge to give that copy a ground of its own and push the
-   picture's own lettering back. The original build refused a scrim on
-   principle; on an illustration this dense, it is what the type needs.
+   The copy is held to the lower left, over the stadium and the banquet lawn —
+   the calmest ground in the picture — and away from the lit market stalls.
    -------------------------------------------------------------------------- */
-
-/* Above the picture, below the copy.
-
-   An ellipse anchored just outside the bottom-right corner rather than a
-   right-to-left wipe. A wipe is even top to bottom, so darkening the copy
-   enough also flattened the sky, the AI Tech Labs tower and the harbour —
-   the parts of the illustration with nothing written on them and nothing to
-   hide. Falling off in both axes puts the weight in the corner the copy
-   occupies and leaves the upper picture and the whole left half alone. */
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: radial-gradient(135% 118% at 108% 104%,
-    rgba(14, 10, 5, .86) 0%,
-    rgba(14, 10, 5, .80) 30%,
-    rgba(14, 10, 5, .62) 46%,
-    rgba(14, 10, 5, .42) 62%,
-    rgba(14, 10, 5, .16) 76%,
-    rgba(14, 10, 5, 0)   90%);
-}
-
 .hero-content {
   position: absolute;
   z-index: 2;
@@ -891,16 +834,8 @@ nav:not(.scrolled) :focus-visible,
   bottom: 0;
   padding: clamp(1.75rem, 4vw, 3.5rem) 6.6vw clamp(2.25rem, 4vw, 3.75rem);
   pointer-events: none;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
 }
-/* Keeps the block inside the scrim's dense end rather than letting the
-   headline run back across the plaza. */
-.hero-content > * { max-width: min(58ch, 64%); }
 .hero-content a { pointer-events: auto; }
-.hero-buttons { justify-content: flex-end; }
 
 .hero h1 {
   color: #fff;
@@ -912,13 +847,13 @@ nav:not(.scrolled) :focus-visible,
 }
 
 /* Small text has far less ink of its own to hide behind. The first two casts
-   sit at zero offset with a 1-3px blur, which rims each glyph almost like a
-   stroke; the wider ones then knock back the picture around it. */
+   sit at zero offset with a 1–3px blur, which rims each glyph almost like a
+   stroke; the wider ones then knock back the picture around it. Held to 560px
+   so the line breaks before the lit banquet signage. */
 .hero p {
   color: #fff;
-  max-width: 34rem;
+  max-width: 560px;
   font-weight: 500;
-  margin-left: auto;
   text-shadow:
     0 0 1px rgba(16, 11, 6, .98),
     0 0 4px rgba(16, 11, 6, .95),
@@ -942,60 +877,45 @@ nav:not(.scrolled) :focus-visible,
 }
 .hero .btn-primary { box-shadow: 0 8px 34px rgba(16, 11, 6, .5); }
 
-/* The copy vacated the bottom left, so the scroll cue takes it. */
 .scroll-indicator {
-  right: auto;
-  left: 4.8vw;
   color: rgba(255, 255, 255, .82);
   text-shadow: 0 1px 2px rgba(16, 11, 6, .9), 0 3px 14px rgba(16, 11, 6, .8);
 }
 
-/* Below 820px the copy drops out of the picture and onto the charcoal band
-   underneath it, where right alignment has nothing to sit against and the
-   scrim has no job beyond softening the seam. */
-@media (max-width: 820px) {
-  .hero-content { align-items: flex-start; text-align: left; }
-  .hero-content > * { max-width: none; }
-  .hero-buttons { justify-content: flex-start; }
-  .hero p { margin-left: 0; max-width: none; }
-  .hero::after {
-    background: linear-gradient(to top, rgba(14, 10, 5, .34) 0%, rgba(14, 10, 5, 0) 42%);
-  }
-}
-
 /* --------------------------------------------------------------------------
-   Lockup backdrop
+   Masthead
 
    The two halves of the nav sit on opposite backgrounds: the links fall over the
    AI Tech Labs tower at a median luminance of 70, the lockup over the cloud bank
-   at 190, clipping to pure white. No shadow separates white from white, which is
-   what left the mark and wordmark dissolving into the sky.
+   at 190 and clipping to pure white. One ink colour cannot serve both, and no
+   shadow separates white from white — which is what left the mark and wordmark
+   dissolving into the sky.
 
-   Rather than tint the whole bar, only the lockup gets a ground: a frosted plate
-   sized to the mark and wordmark, so the artwork stays open everywhere else. The
-   pill radius is the hero buttons' 100px, and it lifts away the moment the nav
-   turns ivory and the dark logo takes over.
+   So the nav stops pretending to be transparent and becomes a real masthead:
+   the same ivory bar it already turned into on scroll, present from the first
+   frame. The lockup gets its dark artwork on a known ground, the artwork below
+   is untouched, and the scroll state is now a slight tightening rather than a
+   colour flip.
    -------------------------------------------------------------------------- */
-nav:not(.scrolled) .logo {
-  background: rgba(22, 16, 9, .38);
-  backdrop-filter: blur(12px) saturate(.85);
-  -webkit-backdrop-filter: blur(12px) saturate(.85);
-  padding: .5rem 1.15rem .5rem .7rem;
-  border-radius: 100px;
-  box-shadow: 0 6px 26px rgba(16, 11, 6, .3);
+nav {
+  background: rgba(243, 237, 232, .94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 var(--dark-line);
 }
-nav:not(.scrolled) .logo-divider { background: rgba(255, 255, 255, .38); }
+.logo { color: var(--text-primary); }
+.logo-text, .logo-sub { text-shadow: none; }
+.logo-sub { color: var(--text-secondary); }
+.logo-divider { background: rgba(43, 33, 24, .24); }
+.logo-mark-light { display: none; }
+.logo-mark-dark  { display: block; }
+.nav-links a { color: var(--text-secondary); text-shadow: none; }
+.nav-links a:hover { color: var(--espresso); }
 
-/* On the plate the type no longer fights the picture, so the heavy stack above
-   would only muddy it. */
-nav:not(.scrolled) .logo-text,
-nav:not(.scrolled) .logo-sub {
-  text-shadow: 0 1px 3px rgba(16, 11, 6, .45);
-}
-nav:not(.scrolled) .logo-mark-light {
-  filter: drop-shadow(0 1px 3px rgba(16, 11, 6, .5));
-}
-nav.scrolled .logo { background: none; backdrop-filter: none; box-shadow: none; }
+/* The bar is opaque, so the artwork has to begin underneath it rather than
+   behind it. Matches the un-scrolled nav height at each breakpoint. */
+.hero { padding-top: 7.1rem; }
+@media (max-width: 860px) { .hero { padding-top: 5rem; } }
 
 /* Venture imagery ---------------------------------------------------------- */
 
@@ -1047,28 +967,6 @@ a.venture:hover .venture-link { color: #F1DCA8; }
   .scroll-indicator span:last-child { animation: none; }
   .hero h1 .line span { animation: none; transform: none; }
   html { scroll-behavior: auto; }
-}
-
-/* --------------------------------------------------------------------------
-   Vertical rhythm
-
-   Section padding, row gaps and the two-column asides were all tuned
-   independently, and the page had drifted into 9–11rem bands with a lot of
-   dead air. Everything above is now on one scale; the two remaining voids
-   were structural rather than a padding value, and are handled here.
-
-   Philosophy and Contact both run a short aside beside a long column — three
-   lines of intro next to five principles, a heading next to a six-field form.
-   The aside finished its content a few hundred pixels above the fold of its
-   own row and left the column empty for the rest of the scroll. Pinning it
-   lets it travel with the column it introduces, so the space reads as
-   deliberate margin instead of an unfinished grid cell.
-   -------------------------------------------------------------------------- */
-@media (min-width:861px) {
-  .principles-intro { position: sticky; top: 7.5rem; }
-}
-@media (min-width:968px) {
-  .contact-left { position: sticky; top: 7.5rem; }
 }
 
 @media print {
@@ -1251,7 +1149,7 @@ a.venture:hover .venture-link { color: #F1DCA8; }
         <span class="venture-link">Visit site →</span>
       </div>
     </a>
-    <div class="venture venture--wide" data-reveal="">
+    <div class="venture" data-reveal="">
       <img src="assets/img/venture-atria-grand.webp" alt="Shakti Greens banquet hall at dusk" class="venture-img" loading="lazy" decoding="async">
       <div class="venture-overlay">
         <div class="venture-category"><span>Hospitality &amp; Events</span></div>
@@ -1263,11 +1161,8 @@ a.venture:hover .venture-link { color: #F1DCA8; }
   </div>
 </section>
 
-<!-- Background photograph: Girgaon Chowpatty, Mumbai, at sunset.
-     (c) Vyacheslav Argenberg / http://www.vascoplanet.com/ - CC BY 4.0
-     https://commons.wikimedia.org/wiki/File:Mumbai,_India,_Bombay,_Mumbai_skyline_at_sunset.jpg -->
 <section class="quote-section">
-  <div class="quote-bg" id="quotePhoto" role="img" aria-label="The Mumbai skyline in silhouette at sunset, seen across Girgaon Chowpatty beach"></div>
+  <div class="quote-bg" id="quoteParallax"></div>
   <div class="quote-bg-overlay"></div>
   <div class="quote-content" data-reveal="">
     <div class="quote-mark">“</div>
@@ -1277,7 +1172,7 @@ a.venture:hover .venture-link { color: #F1DCA8; }
 </section>
 
 <section class="impact" id="impact">
-  <div class="section-label" style="justify-content:center;margin-bottom:2.5rem" data-reveal="">Impact by Numbers</div>
+  <div class="section-label" style="justify-content:center;margin-bottom:4rem" data-reveal="">Impact by Numbers</div>
   <div class="impact-grid">
     <div class="impact-item" data-reveal="">
       <h3>12+</h3>
@@ -1349,8 +1244,8 @@ a.venture:hover .venture-link { color: #F1DCA8; }
 <footer>
   <div class="footer-content">
     <div class="footer-logo" data-reveal="">
-      <span class="footer-lockup">SHAKT<span class="lockup-i">I<img
-        src="assets/img/shakti-mark-white.png" alt="" class="footer-mark" aria-hidden="true"></span>.ONE</span>
+      <img src="assets/img/shakti-mark-white.png" alt="" class="footer-mark" aria-hidden="true">
+      <span class="footer-lockup">SHAKTI.ONE</span>
     </div>
     <div class="footer-grid">
       <div class="footer-col">
@@ -1415,11 +1310,18 @@ a.venture:hover .venture-link { color: #F1DCA8; }
 
   /* ---------------------------------------------------- nav + parallax */
   var nav = $('#navbar');
+  var quote = $('#quoteParallax');
+  var quoteSection = quote && quote.closest('.quote-section');
   var ticking = false;
 
   function onFrame() {
     ticking = false;
     if (nav) nav.classList.toggle('scrolled', window.scrollY > 50);
+    if (reduced || !quote || !quoteSection) return;
+    var t = window.innerHeight - quoteSection.getBoundingClientRect().top;
+    if (t > -window.innerHeight && t < window.innerHeight * 2) {
+      quote.style.transform = 'translateY(' + (t * 0.15).toFixed(2) + 'px)';
+    }
   }
   function onScroll() {
     if (ticking) return;
@@ -1596,5 +1498,6 @@ a.venture:hover .venture-link { color: #F1DCA8; }
 })();
 
 </script>
-</body>
+<script>setTimeout(function(){var n=document.getElementById("navbar"),b=document.querySelector(".hero-bg");
+document.title="navh="+Math.round(n.getBoundingClientRect().height)+" imgtop="+Math.round(b.getBoundingClientRect().top);},500)</script></body>
 </html>
