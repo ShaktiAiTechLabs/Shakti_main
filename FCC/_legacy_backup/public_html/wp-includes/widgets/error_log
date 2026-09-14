@@ -1,0 +1,12 @@
+[03-Feb-2026 00:34:51 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Widget" not found in /home/fccindi3/public_html/wp-includes/widgets/class-wp-widget-block.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/fccindi3/public_html/wp-includes/widgets/class-wp-widget-block.php on line 17
+[03-Feb-2026 07:02:45 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Widget" not found in /home/fccindi3/public_html/wp-includes/widgets/class-wp-widget-block.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/fccindi3/public_html/wp-includes/widgets/class-wp-widget-block.php on line 17
+[10-Apr-2026 08:57:07 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Widget" not found in /home/fccindi3/public_html/wp-includes/widgets/class-wp-widget-block.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/fccindi3/public_html/wp-includes/widgets/class-wp-widget-block.php on line 17

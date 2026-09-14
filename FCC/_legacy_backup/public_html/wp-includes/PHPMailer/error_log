@@ -1,0 +1,12 @@
+[03-Feb-2026 00:32:57 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPMailer\PHPMailer\OAuthTokenProvider" not found in /home/fccindi3/public_html/wp-includes/PHPMailer/OAuth.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/fccindi3/public_html/wp-includes/PHPMailer/OAuth.php on line 36
+[03-Feb-2026 07:00:33 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPMailer\PHPMailer\OAuthTokenProvider" not found in /home/fccindi3/public_html/wp-includes/PHPMailer/OAuth.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/fccindi3/public_html/wp-includes/PHPMailer/OAuth.php on line 36
+[10-Apr-2026 08:55:32 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPMailer\PHPMailer\OAuthTokenProvider" not found in /home/fccindi3/public_html/wp-includes/PHPMailer/OAuth.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/fccindi3/public_html/wp-includes/PHPMailer/OAuth.php on line 36

@@ -1,0 +1,135 @@
+[25-Feb-2025 05:37:36 UTC] PHP Warning:  Undefined array key "mega-menu" in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/elementor/modules/ai/connect/ai.php on line 776
+[25-Feb-2025 05:37:36 UTC] PHP Warning:  Undefined array key "mega-menu" in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/elementor/modules/ai/connect/ai.php on line 776
+[25-Feb-2025 05:37:36 UTC] PHP Warning:  Undefined array key "mega-menu" in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/elementor/modules/ai/connect/ai.php on line 776
+[25-Feb-2025 06:44:17 UTC] PHP Warning:  Undefined array key "editor_post_id" in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/elementor/modules/history/revisions-manager.php on line 363
+[26-Feb-2025 13:45:34 UTC] PHP Warning:  require(/home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-roles/src/class-roles.php): Failed to open stream: No such file or directory in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/jetpack/vendor/jetpack-autoloader/class-php-autoloader.php on line 102
+[26-Feb-2025 13:45:34 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-roles/src/class-roles.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/jetpack/vendor/jetpack-autoloader/class-php-autoloader.php:102
+Stack trace:
+#0 /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/jetpack-boost/jetpack_vendor/automattic/jetpack-sync/src/class-listener.php(411): Automattic\Jetpack\Autoloader\jpf11009ded9fc4592b6a05b61ce272b3c_jetpackⓥ14_3\al5_0_1\PHP_Autoloader::load_class()
+#1 /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/jetpack-boost/jetpack_vendor/automattic/jetpack-sync/src/class-listener.php(347): Automattic\Jetpack\Sync\Listener->get_actor()
+#2 /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/jetpack-boost/jetpack_vendor/automattic/jetpack-sync/src/class-listener.php(201): Automattic\Jetpack\Sync\Listener->enqueue_action()
+#3 [internal function]: Automattic\Jetpack\Sync\Listener->action_handler()
+#4 /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/jetpack-boost/jetpack_vendor/automattic/jetpack-sync/src/modules/class-plugins.php(356): call_user_func()
+#5 /home/apwuyvor/fcc25.theri8click.com/wp-includes/class-wp-hook.php(324): Automattic\Jetpack\Sync\Modules\Plugins->deleted_plugin()
+#6 /home/apwuyvor/fcc25.theri8click.com/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters()
+#7 /home/apwuyvor/fcc25.theri8click.com/wp-includes/plugin.php(517): WP_Hook->do_action()
+#8 /home/apwuyvor/fcc25.theri8click.com/wp-admin/includes/plugin.php(1002): do_action()
+#9 /home/apwuyvor/fcc25.theri8click.com/wp-admin/includes/ajax-actions.php(4771): delete_plugins()
+#10 /home/apwuyvor/fcc25.theri8click.com/wp-includes/class-wp-hook.php(324): wp_ajax_delete_plugin()
+#11 /home/apwuyvor/fcc25.theri8click.com/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters()
+#12 /home/apwuyvor/fcc25.theri8click.com/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /home/apwuyvor/fcc25.theri8click.com/wp-admin/admin-ajax.php(192): do_action()
+#14 {main}
+  thrown in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/jetpack/vendor/jetpack-autoloader/class-php-autoloader.php on line 102
+[27-Feb-2025 13:10:30 UTC] PHP Warning:  Undefined array key "xpro_elementor_module_list" in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php on line 25
+[27-Feb-2025 13:10:30 UTC] PHP Fatal error:  Uncaught TypeError: filter_var_array(): Argument #1 ($array) must be of type array, null given in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php:25
+Stack trace:
+#0 /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php(25): filter_var_array()
+#1 /home/apwuyvor/fcc25.theri8click.com/wp-includes/class-wp-hook.php(324): XproElementorAddons\Libs\Dashboard\Classes\Xpro_Elementor_Dashboard_Ajax->xpro_elementor_addons_admin_action()
+#2 /home/apwuyvor/fcc25.theri8click.com/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters()
+#3 /home/apwuyvor/fcc25.theri8click.com/wp-includes/plugin.php(517): WP_Hook->do_action()
+#4 /home/apwuyvor/fcc25.theri8click.com/wp-admin/admin-ajax.php(192): do_action()
+#5 {main}
+  thrown in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php on line 25
+[27-Feb-2025 13:11:09 UTC] PHP Warning:  Undefined array key "xpro_elementor_module_list" in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php on line 25
+[27-Feb-2025 13:11:09 UTC] PHP Fatal error:  Uncaught TypeError: filter_var_array(): Argument #1 ($array) must be of type array, null given in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php:25
+Stack trace:
+#0 /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php(25): filter_var_array()
+#1 /home/apwuyvor/fcc25.theri8click.com/wp-includes/class-wp-hook.php(324): XproElementorAddons\Libs\Dashboard\Classes\Xpro_Elementor_Dashboard_Ajax->xpro_elementor_addons_admin_action()
+#2 /home/apwuyvor/fcc25.theri8click.com/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters()
+#3 /home/apwuyvor/fcc25.theri8click.com/wp-includes/plugin.php(517): WP_Hook->do_action()
+#4 /home/apwuyvor/fcc25.theri8click.com/wp-admin/admin-ajax.php(192): do_action()
+#5 {main}
+  thrown in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php on line 25
+[27-Feb-2025 13:13:39 UTC] PHP Warning:  Undefined array key "xpro_elementor_module_list" in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php on line 25
+[27-Feb-2025 13:13:39 UTC] PHP Fatal error:  Uncaught TypeError: filter_var_array(): Argument #1 ($array) must be of type array, null given in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php:25
+Stack trace:
+#0 /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php(25): filter_var_array()
+#1 /home/apwuyvor/fcc25.theri8click.com/wp-includes/class-wp-hook.php(324): XproElementorAddons\Libs\Dashboard\Classes\Xpro_Elementor_Dashboard_Ajax->xpro_elementor_addons_admin_action()
+#2 /home/apwuyvor/fcc25.theri8click.com/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters()
+#3 /home/apwuyvor/fcc25.theri8click.com/wp-includes/plugin.php(517): WP_Hook->do_action()
+#4 /home/apwuyvor/fcc25.theri8click.com/wp-admin/admin-ajax.php(192): do_action()
+#5 {main}
+  thrown in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php on line 25
+[27-Feb-2025 13:14:02 UTC] PHP Warning:  Undefined array key "xpro_elementor_module_list" in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php on line 25
+[27-Feb-2025 13:14:02 UTC] PHP Fatal error:  Uncaught TypeError: filter_var_array(): Argument #1 ($array) must be of type array, null given in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php:25
+Stack trace:
+#0 /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php(25): filter_var_array()
+#1 /home/apwuyvor/fcc25.theri8click.com/wp-includes/class-wp-hook.php(324): XproElementorAddons\Libs\Dashboard\Classes\Xpro_Elementor_Dashboard_Ajax->xpro_elementor_addons_admin_action()
+#2 /home/apwuyvor/fcc25.theri8click.com/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters()
+#3 /home/apwuyvor/fcc25.theri8click.com/wp-includes/plugin.php(517): WP_Hook->do_action()
+#4 /home/apwuyvor/fcc25.theri8click.com/wp-admin/admin-ajax.php(192): do_action()
+#5 {main}
+  thrown in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php on line 25
+[27-Feb-2025 13:31:35 UTC] PHP Warning:  Undefined array key "xpro_elementor_module_list" in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php on line 25
+[27-Feb-2025 13:31:35 UTC] PHP Fatal error:  Uncaught TypeError: filter_var_array(): Argument #1 ($array) must be of type array, null given in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php:25
+Stack trace:
+#0 /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php(25): filter_var_array()
+#1 /home/apwuyvor/fcc25.theri8click.com/wp-includes/class-wp-hook.php(324): XproElementorAddons\Libs\Dashboard\Classes\Xpro_Elementor_Dashboard_Ajax->xpro_elementor_addons_admin_action()
+#2 /home/apwuyvor/fcc25.theri8click.com/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters()
+#3 /home/apwuyvor/fcc25.theri8click.com/wp-includes/plugin.php(517): WP_Hook->do_action()
+#4 /home/apwuyvor/fcc25.theri8click.com/wp-admin/admin-ajax.php(192): do_action()
+#5 {main}
+  thrown in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php on line 25
+[03-Mar-2025 06:49:48 UTC] PHP Warning:  Undefined array key "xpro_elementor_module_list" in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php on line 25
+[03-Mar-2025 06:49:48 UTC] PHP Fatal error:  Uncaught TypeError: filter_var_array(): Argument #1 ($array) must be of type array, null given in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php:25
+Stack trace:
+#0 /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php(25): filter_var_array()
+#1 /home/apwuyvor/fcc25.theri8click.com/wp-includes/class-wp-hook.php(324): XproElementorAddons\Libs\Dashboard\Classes\Xpro_Elementor_Dashboard_Ajax->xpro_elementor_addons_admin_action()
+#2 /home/apwuyvor/fcc25.theri8click.com/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters()
+#3 /home/apwuyvor/fcc25.theri8click.com/wp-includes/plugin.php(517): WP_Hook->do_action()
+#4 /home/apwuyvor/fcc25.theri8click.com/wp-admin/admin-ajax.php(192): do_action()
+#5 {main}
+  thrown in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/xpro-elementor-addons/libs/dashboard/classes/ajax.php on line 25
+[05-Mar-2025 07:00:04 UTC] PHP Warning:  Attempt to read property "post_type" on null in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/elementor/includes/utils.php on line 913
+[05-Mar-2025 07:00:04 UTC] PHP Warning:  Attempt to read property "post_status" on null in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/elementor/includes/utils.php on line 919
+[05-Mar-2025 07:00:04 UTC] PHP Warning:  Attempt to read property "post_status" on null in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/elementor/includes/utils.php on line 922
+[05-Mar-2025 07:00:04 UTC] PHP Warning:  Attempt to read property "ID" on null in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/elementor/includes/utils.php on line 923
+[05-Mar-2025 07:00:04 UTC] PHP Warning:  Attempt to read property "ID" on null in /home/apwuyvor/fcc25.theri8click.com/wp-content/plugins/elementor/includes/utils.php on line 925
+[06-Jan-2026 12:08:06 UTC] PHP Warning:  Attempt to read property "ID" on null in /home/fccindi3/public_html/wp-content/plugins/tenweb-speed-optimizer/includes/OptimizerElementor.php on line 85
+[09-Jan-2026 08:53:55 UTC] PHP Warning:  Attempt to read property "ID" on null in /home/fccindi3/public_html/wp-content/plugins/tenweb-speed-optimizer/includes/OptimizerElementor.php on line 85
+[12-Jan-2026 17:02:08 UTC] PHP Warning:  Undefined array key "post_id" in /home/fccindi3/public_html/wp-content/plugins/elementor-pro/modules/forms/classes/ajax-handler.php on line 64
+[12-Jan-2026 17:02:08 UTC] PHP Warning:  Undefined array key "form_id" in /home/fccindi3/public_html/wp-content/plugins/elementor-pro/modules/forms/classes/ajax-handler.php on line 76
+[16-Jan-2026 06:14:26 UTC] PHP Warning:  simplexml_load_file(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:14:26 UTC] PHP Warning:  simplexml_load_file(https://fccindia.com/wp-content/uploads/2026/01/2001.svg): Failed to open stream: no suitable wrapper could be found in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:14:26 UTC] PHP Warning:  simplexml_load_file(): I/O warning : failed to load &quot;https://fccindia.com/wp-content/uploads/2026/01/2001.svg&quot;: No such file or directory in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:14:32 UTC] PHP Warning:  simplexml_load_file(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:14:32 UTC] PHP Warning:  simplexml_load_file(https://fccindia.com/wp-content/uploads/2026/01/2003.svg): Failed to open stream: no suitable wrapper could be found in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:14:32 UTC] PHP Warning:  simplexml_load_file(): I/O warning : failed to load &quot;https://fccindia.com/wp-content/uploads/2026/01/2003.svg&quot;: No such file or directory in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:14:39 UTC] PHP Warning:  simplexml_load_file(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:14:39 UTC] PHP Warning:  simplexml_load_file(https://fccindia.com/wp-content/uploads/2026/01/2004.svg): Failed to open stream: no suitable wrapper could be found in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:14:39 UTC] PHP Warning:  simplexml_load_file(): I/O warning : failed to load &quot;https://fccindia.com/wp-content/uploads/2026/01/2004.svg&quot;: No such file or directory in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:14:46 UTC] PHP Warning:  simplexml_load_file(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:14:46 UTC] PHP Warning:  simplexml_load_file(https://fccindia.com/wp-content/uploads/2026/01/2005.svg): Failed to open stream: no suitable wrapper could be found in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:14:46 UTC] PHP Warning:  simplexml_load_file(): I/O warning : failed to load &quot;https://fccindia.com/wp-content/uploads/2026/01/2005.svg&quot;: No such file or directory in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:14:53 UTC] PHP Warning:  simplexml_load_file(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:14:53 UTC] PHP Warning:  simplexml_load_file(https://fccindia.com/wp-content/uploads/2026/01/2007.svg): Failed to open stream: no suitable wrapper could be found in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:14:53 UTC] PHP Warning:  simplexml_load_file(): I/O warning : failed to load &quot;https://fccindia.com/wp-content/uploads/2026/01/2007.svg&quot;: No such file or directory in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:02 UTC] PHP Warning:  simplexml_load_file(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:02 UTC] PHP Warning:  simplexml_load_file(https://fccindia.com/wp-content/uploads/2026/01/2008.svg): Failed to open stream: no suitable wrapper could be found in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:02 UTC] PHP Warning:  simplexml_load_file(): I/O warning : failed to load &quot;https://fccindia.com/wp-content/uploads/2026/01/2008.svg&quot;: No such file or directory in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:09 UTC] PHP Warning:  simplexml_load_file(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:09 UTC] PHP Warning:  simplexml_load_file(https://fccindia.com/wp-content/uploads/2026/01/2010.svg): Failed to open stream: no suitable wrapper could be found in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:09 UTC] PHP Warning:  simplexml_load_file(): I/O warning : failed to load &quot;https://fccindia.com/wp-content/uploads/2026/01/2010.svg&quot;: No such file or directory in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:16 UTC] PHP Warning:  simplexml_load_file(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:16 UTC] PHP Warning:  simplexml_load_file(https://fccindia.com/wp-content/uploads/2026/01/2013.svg): Failed to open stream: no suitable wrapper could be found in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:16 UTC] PHP Warning:  simplexml_load_file(): I/O warning : failed to load &quot;https://fccindia.com/wp-content/uploads/2026/01/2013.svg&quot;: No such file or directory in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:27 UTC] PHP Warning:  simplexml_load_file(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:27 UTC] PHP Warning:  simplexml_load_file(https://fccindia.com/wp-content/uploads/2026/01/2016.svg): Failed to open stream: no suitable wrapper could be found in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:27 UTC] PHP Warning:  simplexml_load_file(): I/O warning : failed to load &quot;https://fccindia.com/wp-content/uploads/2026/01/2016.svg&quot;: No such file or directory in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:35 UTC] PHP Warning:  simplexml_load_file(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:35 UTC] PHP Warning:  simplexml_load_file(https://fccindia.com/wp-content/uploads/2026/01/2018.svg): Failed to open stream: no suitable wrapper could be found in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:35 UTC] PHP Warning:  simplexml_load_file(): I/O warning : failed to load &quot;https://fccindia.com/wp-content/uploads/2026/01/2018.svg&quot;: No such file or directory in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:42 UTC] PHP Warning:  simplexml_load_file(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:42 UTC] PHP Warning:  simplexml_load_file(https://fccindia.com/wp-content/uploads/2026/01/2020.svg): Failed to open stream: no suitable wrapper could be found in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:42 UTC] PHP Warning:  simplexml_load_file(): I/O warning : failed to load &quot;https://fccindia.com/wp-content/uploads/2026/01/2020.svg&quot;: No such file or directory in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:50 UTC] PHP Warning:  simplexml_load_file(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:50 UTC] PHP Warning:  simplexml_load_file(https://fccindia.com/wp-content/uploads/2026/01/2024.svg): Failed to open stream: no suitable wrapper could be found in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:50 UTC] PHP Warning:  simplexml_load_file(): I/O warning : failed to load &quot;https://fccindia.com/wp-content/uploads/2026/01/2024.svg&quot;: No such file or directory in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:57 UTC] PHP Warning:  simplexml_load_file(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:57 UTC] PHP Warning:  simplexml_load_file(https://fccindia.com/wp-content/uploads/2026/01/2025.svg): Failed to open stream: no suitable wrapper could be found in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 06:15:57 UTC] PHP Warning:  simplexml_load_file(): I/O warning : failed to load &quot;https://fccindia.com/wp-content/uploads/2026/01/2025.svg&quot;: No such file or directory in /home/fccindi3/public_html/wp-content/plugins/elementor/core/files/file-types/svg.php on line 161
+[16-Jan-2026 07:35:33 UTC] PHP Warning:  Attempt to read property "ID" on null in /home/fccindi3/public_html/wp-content/plugins/tenweb-speed-optimizer/includes/OptimizerElementor.php on line 85
+[16-Jan-2026 07:47:09 UTC] PHP Warning:  Attempt to read property "ID" on null in /home/fccindi3/public_html/wp-content/plugins/tenweb-speed-optimizer/includes/OptimizerElementor.php on line 85
+[16-Jan-2026 08:01:28 UTC] PHP Warning:  Attempt to read property "ID" on null in /home/fccindi3/public_html/wp-content/plugins/tenweb-speed-optimizer/includes/OptimizerElementor.php on line 85
+[20-Jan-2026 11:38:00 UTC] PHP Warning:  Attempt to read property "ID" on null in /home/fccindi3/public_html/wp-content/plugins/tenweb-speed-optimizer/includes/OptimizerElementor.php on line 85

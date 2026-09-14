@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-substrate-950 text-slate-100 font-sans antialiased;
+    color-scheme: dark;
+  }
+}
+
+/* Custom technical micro-grid */
+.bg-grid-tech {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-radial-fade {
+  background: radial-gradient(circle at 50% 0%, rgba(102, 143, 55, 0.16), transparent 70%);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #060B05;
+}
+::-webkit-scrollbar-thumb {
+  background: #192614;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #668F37;
+}
+

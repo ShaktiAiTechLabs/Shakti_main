@@ -1,0 +1,4 @@
+[03-Feb-2026 02:35:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_action() in /home/fccindi3/public_html/wp-content/themes/twentytwentyfour/functions.php:147
+Stack trace:
+#0 {main}
+  thrown in /home/fccindi3/public_html/wp-content/themes/twentytwentyfour/functions.php on line 147
